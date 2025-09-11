@@ -1,627 +1,876 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>集客用LINE公式アカウント運用代行サービス | LINE Pro Solutions</title>
-    <meta name="description" content="なんとなくの集客から、狙って成果を出す集客へ。LINE公式アカウントを活用した戦略的集客支援サービス。完全オーダーメイドのデザインとプロの運用サポート。">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- ヘッダー -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../index.html" class="logo">
-                <div class="logo-icon">L</div>
-                LINE Pro Solutions
-            </a>
-            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">ホーム</a>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">サービス <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="customer-acquisition.html" class="dropdown-item">
-                            <i class="fas fa-users"></i> 集客用LINE
-                        </a>
-                        <a href="back-office.html" class="dropdown-item">
-                            <i class="fas fa-cogs"></i> バックオフィス用LINE
-                        </a>
-                        <a href="integrated.html" class="dropdown-item">
-                            <i class="fas fa-rocket"></i> 統合プラン
-                        </a>
-                        <a href="training.html" class="dropdown-item">
-                            <i class="fas fa-graduation-cap"></i> 研修サービス
-                        </a>
-                    </div>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="../line-features.html" class="nav-link">機能</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="../contact.html" class="nav-link">お問い合わせ</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="../contact.html" class="btn btn-primary">無料相談</a>
-                </li>
-            </ul>
-            
-            <div class="mobile-menu-btn">
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
-            </div>
-        </nav>
-    </header>
+/* LINE公式アカウント導入支援会社 - メインスタイルシート */
 
-    <main class="main">
-        <!-- ヒーローセクション -->
-        <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-            <div class="container">
-                <h1 class="hero-title" style="color: white;">
-                    "なんとなく"の集客から<br>
-                    <span style="color: #FFD700;">"狙って"成果を出す集客へ</span>
-                </h1>
-                <p class="hero-subtitle" style="color: white; opacity: 0.9;">
-                    お客様ひとりひとりに寄り添ったサービスを
-                </p>
-                <div style="margin-top: 40px;">
-                    <a href="../contact.html" class="btn btn-secondary btn-large" style="margin-right: 20px;">
-                        <i class="fas fa-phone"></i> 無料相談を始める
-                    </a>
-                    <a href="#problems" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
-                        詳しく見る
-                    </a>
-                </div>
-            </div>
-        </section>
+:root {
+    /* カラーパレット - LINEブランドカラーとビジネス向け配色 */
+    --primary-color: #00C300;  /* LINEグリーン */
+    --primary-dark: #00A000;
+    --secondary-color: #0066FF;
+    --accent-color: #FF6B35;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --bg-white: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --bg-gray: #F5F5F5;
+    --border-color: #E0E0E0;
+    --shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
 
-        <!-- 集客の悩みセクション -->
-        <section id="problems" class="section problems">
-            <div class="container">
-                <h2 class="section-title">集客でこんなお悩みはありませんか？</h2>
-                
-                <div class="problems-grid">
-                    <div class="problem-item">
-                        <p class="problem-text">「一度来てくれたお客様が、なぜかリピートしてくれない…」</p>
-                    </div>
-                    <div class="problem-item">
-                        <p class="problem-text">「SNSや広告で、お店のことは知ってもらえているはずなのに、売上に繋がらない…」</p>
-                    </div>
-                    <div class="problem-item">
-                        <p class="problem-text">「お店や商品の良さを、もっと深く、正しく伝えたいのに…」</p>
-                    </div>
-                    <div class="problem-item">
-                        <p class="problem-text">「お客様一人一人に寄り添ったサービスを行いたいけど、リソースが足りない…」</p>
-                    </div>
-                    <div class="problem-item">
-                        <p class="problem-text">「お客様に合わせて、効果的な広告を出したいけど費用が高い…」</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px; padding: 40px; background: white; border-radius: 16px; box-shadow: var(--shadow);">
-                    <h3 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 20px;">
-                        その原因は、お客様との「関係性の深さ」にあるのかもしれません
-                    </h3>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
-                        不特定多数にアピールするだけの集客は、空にチラシを撒いているようなもの。<br>
-                        これからの時代に本当に必要なのは、興味を持ってくれたお客様一人ひとりと、<strong>より深く、より特別な関係</strong>を築くことです。
-                    </p>
-                </div>
-            </div>
-        </section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <!-- LINEが最強の理由 -->
-        <section class="section" style="background: var(--bg-light);">
-            <div class="container">
-                <h2 class="section-title">LINE公式アカウントは、それを実現するための、<br>現代で最も強力なツールです</h2>
-                
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" style="background: #00C300;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="card-title">圧倒的な到達力</h3>
-                        <p class="card-description">
-                            日本人の９割が日常的に使用している。お客様のスマホに<strong>「プッシュ通知」で確実にメッセージを届けられる</strong>、圧倒的な到達力。
-                        </p>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-icon" style="background: #FF6B35;">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3 class="card-title">親密な関係構築力</h3>
-                        <p class="card-description">
-                            他のお客様には見えない<strong>「1対1」で、特別なご案内ができる</strong>、親密な関係構築力。お客様だけの特別感を演出できます。
-                        </p>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-icon" style="background: #0066FF;">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="card-title">抜群の利便性</h3>
-                        <p class="card-description">
-                            予約もクーポンもポイントカードも、<strong>お客様が毎日使うアプリ一つで完結する</strong>、抜群の利便性。
-                        </p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px; padding: 40px; background: white; border-radius: 16px; box-shadow: var(--shadow);">
-                    <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px;">
-                        唯一無二のプラットフォームだからです
-                    </h3>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 900px; margin: 0 auto;">
-                        私たちは、このLINEという最強のツールを、プロの<strong>「戦略」「デザイン」「運用力」</strong>で磨き上げ、<br>
-                        貴社のビジネスを加速させる"集客エンジン"へと進化させます。
-                    </p>
-                </div>
-            </div>
-        </section>
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
 
-        <!-- サービス内容 -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">サービス内容</h2>
-                <p class="section-subtitle">
-                    私たちがご提供する、3つのプロフェッショナルサービス
-                </p>
-                
-                <div class="cards-grid">
-                    <div class="card">
-                        <div style="text-align: left;">
-                            <div style="background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 20px; display: inline-block; margin-bottom: 20px; font-weight: 600;">
-                                1. 戦略設計
-                            </div>
-                            <h3 class="card-title" style="text-align: left; margin-bottom: 15px;">
-                                すべての成功は、ここから始まる
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px; text-align: left;">
-                                <strong>PLAN：成功への、最も確実な地図を描く</strong>
-                            </p>
-                            <ul style="text-align: left; list-style: none; color: var(--text-secondary);">
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>徹底的なビジネスヒアリングとアカウントコンセプト設計</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>具体的なゴール設定（KGI/KPI）</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>年間コンテンツプランニング</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div style="text-align: left;">
-                            <div style="background: var(--accent-color); color: white; padding: 10px 20px; border-radius: 20px; display: inline-block; margin-bottom: 20px; font-weight: 600;">
-                                2. 構築・制作
-                            </div>
-                            <h3 class="card-title" style="text-align: left; margin-bottom: 15px;">
-                                戦略を、誰もが魅了される"形"にする
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px; text-align: left;">
-                                <strong>DO：プロの技術とデザインで、最高の武器を創り上げる</strong>
-                            </p>
-                            <ul style="text-align: left; list-style: none; color: var(--text-secondary);">
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>完全オーダーメイドのリッチメニューデザイン</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>高機能リッチメニューの実装</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>各種クリエイティブ制作とアカウントの最適化</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div style="text-align: left;">
-                            <div style="background: var(--secondary-color); color: white; padding: 10px 20px; border-radius: 20px; display: inline-block; margin-bottom: 20px; font-weight: 600;">
-                                3. 運用・改善
-                            </div>
-                            <h3 class="card-title" style="text-align: left; margin-bottom: 15px;">
-                                最高の武器を使いこなし、成果を最大化する
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px; text-align: left;">
-                                <strong>CHECK & ACTION：データと共に走り、常により良い未来を目指す</strong>
-                            </p>
-                            <ul style="text-align: left; list-style: none; color: var(--text-secondary);">
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>配信代行・企画提案</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>分析レポートと改善提案</li>
-                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>柔軟なポイント活用</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* ヘッダー */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
-        <!-- 他社との比較 -->
-        <section class="section" style="background: var(--bg-light);">
-            <div class="container">
-                <h2 class="section-title">他社との比較</h2>
-                
-                <div class="comparison-table">
-                    <table style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>比較項目</th>
-                                <th>私たちのサービス</th>
-                                <th>一般的なツール提供会社<br>（L-STEP, エルメ等）</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>サービス内容</strong></td>
-                                <td class="advantage">◎アカウントの構築〜運用サポートまで</td>
-                                <td>〇ツールの提供とサポート</td>
-                            </tr>
-                            <tr>
-                                <td><strong>リッチメニューの設置</strong></td>
-                                <td class="advantage">◎ 全プランで標準搭載</td>
-                                <td class="disadvantage">△上位プランでのみ設置可能</td>
-                            </tr>
-                            <tr>
-                                <td><strong>リッチメニューデザイン</strong></td>
-                                <td class="advantage">◎ デザインから作成まで完全オーダーメイド</td>
-                                <td class="disadvantage">✖ 顧客が自力で用意、もしくは用意されたテンプレから自力で作成</td>
-                            </tr>
-                            <tr>
-                                <td><strong>サポート料金体系</strong></td>
-                                <td class="advantage">◎ ポイント制（カスタマイズ可能で無駄がない）</td>
-                                <td>〇 1回あたりの固定料金</td>
-                            </tr>
-                            <tr>
-                                <td><strong>お客様の役割</strong></td>
-                                <td class="advantage">◎ 企画・意思決定（「何をしたいか」を伝えるだけ）</td>
-                                <td class="disadvantage">✕ 基本的に自力での運用（学習・設定・デザイン・運用）</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
 
-        <!-- 料金プラン -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">料金プラン</h2>
-                
-                <div style="text-align: center; margin-bottom: 40px; padding: 30px; background: var(--bg-light); border-radius: 12px;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem;">
-                        全プラン共通 初期費用
-                    </h3>
-                    <p style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">
-                        9,800円〜49,800円
-                    </p>
-                    <p style="color: var(--text-secondary);">
-                        基本料金の9,800円で、アカウントの初期設定、プロフィール設定、あいさつメッセージ設定を含みます。<br>
-                        また、お客様のご要望を聞かせていただき、デザイナー監修によるリッチメニューのデザイン作成も承ります。
-                    </p>
-                </div>
-                
-                <h3 style="text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: var(--text-primary);">
-                    集客用LINE公式アカウント 運用代行サービス
-                </h3>
-                
-                <div class="pricing-table">
-                    <div class="pricing-card">
-                        <div class="plan-name">超ライトプラン</div>
-                        <div class="plan-price">4,980円</div>
-                        <div class="plan-period">月額（税抜）</div>
-                        <ul class="plan-features">
-                            <li>付与ポイント（月）: 10pt</li>
-                            <li>ポイント繰越: ✖（当月末まで）</li>
-                            <li>基本機能: ○</li>
-                            <li>リッチメニュー設置: ○</li>
-                            <li>分析レポート: ✖</li>
-                            <li>タブ分けリッチメニュー: ✖</li>
-                        </ul>
-                        <a href="../contact.html" class="btn btn-secondary">相談する</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <div class="plan-name">ライトプラン</div>
-                        <div class="plan-price">14,800円</div>
-                        <div class="plan-period">月額（税抜）</div>
-                        <ul class="plan-features">
-                            <li>付与ポイント（月）: 30pt</li>
-                            <li>ポイント繰越: ✖（当月末まで）</li>
-                            <li>基本機能: ○</li>
-                            <li>リッチメニュー設置: ○</li>
-                            <li>分析レポート: ✕</li>
-                            <li>タブ分けリッチメニュー: ○</li>
-                        </ul>
-                        <a href="../contact.html" class="btn btn-secondary">相談する</a>
-                    </div>
-                    
-                    <div class="pricing-card featured">
-                        <div class="plan-name">ベーシックプラン</div>
-                        <div class="plan-price">34,800円</div>
-                        <div class="plan-period">月額（税抜）</div>
-                        <ul class="plan-features">
-                            <li>付与ポイント（月）: 50pt</li>
-                            <li>ポイント繰越: ○（翌月末まで）</li>
-                            <li>基本機能: ○</li>
-                            <li>リッチメニュー設置: ○</li>
-                            <li>分析レポート: ○</li>
-                            <li>タブ分けリッチメニュー: ○</li>
-                        </ul>
-                        <a href="../contact.html" class="btn btn-primary">相談する</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <div class="plan-name">スタンダードプラン</div>
-                        <div class="plan-price">59,800円</div>
-                        <div class="plan-period">月額（税抜）</div>
-                        <ul class="plan-features">
-                            <li>付与ポイント（月）: 80pt</li>
-                            <li>ポイント繰越: ○（翌月末まで）</li>
-                            <li>基本機能: ○</li>
-                            <li>リッチメニュー設置: ○</li>
-                            <li>分析レポート: ○</li>
-                            <li>ユーザーごとのメニュー: ○</li>
-                        </ul>
-                        <a href="../contact.html" class="btn btn-secondary">相談する</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <div class="plan-name">プレミアムプラン</div>
-                        <div class="plan-price">89,800円</div>
-                        <div class="plan-period">月額（税抜）</div>
-                        <ul class="plan-features">
-                            <li>付与ポイント（月）: 170pt</li>
-                            <li>ポイント繰越: ○（翌月末まで）</li>
-                            <li>基本機能: ○</li>
-                            <li>リッチメニュー設置: ○</li>
-                            <li>分析レポート: ○</li>
-                            <li>ユーザーごとのメニュー: ○</li>
-                        </ul>
-                        <a href="../contact.html" class="btn btn-secondary">相談する</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        <!-- ポイント制の説明 -->
-        <section class="section" style="background: var(--bg-light);">
-            <div class="container">
-                <h2 class="section-title">料金体系「ポイント制」のご案内</h2>
-                <p class="section-subtitle">
-                    もう「無駄」も「不公平」もありません
-                </p>
-                
-                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 40px;">
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto;">
-                        「簡単なテキスト配信1回」も「デザインに時間のかかるリッチメニュー変更1回」も、同じ「1回」としてカウントされてしまう…<br><br>
-                        従来の回数制の課題は、そこにありました。<br><br>
-                        そこで私たちは、月々のサポートをより<strong>柔軟</strong>に、そして<strong>公平</strong>にご利用いただくために、独自の<strong>『ポイント制』</strong>を導入しました。
-                    </p>
-                </div>
-                
-                <h3 style="text-align: center; margin-bottom: 40px; font-size: 1.8rem;">
-                    ポイント制がもたらす、4つの大きなメリット
-                </h3>
-                
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" style="background: #4CAF50;">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                        </div>
-                        <h3 class="card-title">1. 柔軟性</h3>
-                        <p class="card-description">
-                            必要な時に、必要な分だけ。「今月はキャンペーンに集中」「来月は落ち着いているから簡単な更新だけ」といった、貴社のビジネスの波に完璧に寄り添った使い方ができます。
-                        </p>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-icon" style="background: #FF9800;">
-                            <i class="fas fa-yen-sign"></i>
-                        </div>
-                        <h3 class="card-title">2. 経済性</h3>
-                        <p class="card-description">
-                            支払った料金に、無駄がありません。ベーシックプラン以上では、使い切れなかったポイントは翌月に繰り越すことができます。
-                        </p>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-icon" style="background: #2196F3;">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3 class="card-title">3. 透明性</h3>
-                        <p class="card-description">
-                            価値が明確です。作業の難易度や所要時間に応じてポイント数が設定されているため、「なぜ、この作業にこの価格がかかるのか」が非常に明瞭です。
-                        </p>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-icon" style="background: #9C27B0;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="card-title">4. 計画性</h3>
-                        <p class="card-description">
-                            未来への投資が可能です。「今月はポイントを貯めておいて、来月の大型キャンペーンでリッチメニューを全面変更しよう」といった、中長期的な視点での計画的な投資が可能になります。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
 
-        <!-- ポイント消費メニュー -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">ポイント消費メニュー（目安）</h2>
-                
-                <div class="comparison-table">
-                    <table style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>カテゴリ</th>
-                                <th>代行作業内容</th>
-                                <th>消費ポイント</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #F0F8FF;">
-                                <td rowspan="4"><strong>メッセージング</strong></td>
-                                <td>テキストのみの一斉配信</td>
-                                <td><strong>5 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F0F8FF;">
-                                <td>クーポン・抽選の作成・配信</td>
-                                <td><strong>10 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F0F8FF;">
-                                <td>リッチメッセージのデザイン・配信</td>
-                                <td><strong>20 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F0F8FF;">
-                                <td>カードタイプメッセージの配信</td>
-                                <td><strong>25 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F8F8FF;">
-                                <td rowspan="3"><strong>設定内容変更</strong></td>
-                                <td>ステップ配信のシナリオ設定（1通分）</td>
-                                <td><strong>10 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F8F8FF;">
-                                <td>リッチメニューの変更（デザイン・内容）<br>タブ分けリッチメニューの場合は、1枚につき</td>
-                                <td><strong>40 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F8F8FF;">
-                                <td>ショップカードの作成・設定</td>
-                                <td><strong>15 pt</strong></td>
-                            </tr>
-                            <tr style="background: #FFF8F0;">
-                                <td rowspan="2"><strong>分析・企画</strong></td>
-                                <td>月次レポート作成＋改善提案コメント<br>(ベーシックプラン以上は標準装備)</td>
-                                <td><strong>25 pt</strong></td>
-                            </tr>
-                            <tr style="background: #FFF8F0;">
-                                <td>リサーチ・アンケート調査</td>
-                                <td><strong>20 pt</strong></td>
-                            </tr>
-                            <tr style="background: #F0FFF0;">
-                                <td><strong>その他</strong></td>
-                                <td>オンラインミーティング（30分）</td>
-                                <td><strong>30 pt</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div style="text-align: center; margin-top: 30px;">
-                    <p style="color: var(--text-secondary);">
-                        メニューに無いご要望もお問い合わせください。<br>
-                        「こんなことはできる？」といった特別なご要望があれば、お気軽にご相談ください。
-                    </p>
-                </div>
-            </div>
-        </section>
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
 
-        <!-- CTA セクション -->
-        <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white;">
-            <div class="container" style="text-align: center;">
-                <h2 style="color: white; margin-bottom: 20px;">まずは無料相談から始めませんか？</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
-                    あなたのビジネスに最適な集客戦略を、プロがご提案します。<br>
-                    相談は完全無料。強引な営業は一切いたしません。
-                </p>
-                <a href="../contact.html" class="btn btn-secondary btn-large">
-                    <i class="fas fa-calendar-alt"></i> 無料相談を予約する
-                </a>
-            </div>
-        </section>
-    </main>
+.nav-item {
+    position: relative;
+}
 
-    <!-- フッター -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>サービス</h3>
-                    <ul>
-                        <li><a href="customer-acquisition.html">集客用LINE</a></li>
-                        <li><a href="back-office.html">バックオフィス用LINE</a></li>
-                        <li><a href="integrated.html">統合プラン</a></li>
-                        <li><a href="training.html">研修サービス</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>機能・情報</h3>
-                    <ul>
-                        <li><a href="../line-features.html">LINE機能一覧</a></li>
-                        <li><a href="../contact.html">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>会社情報</h3>
-                    <p style="color: #CCCCCC; margin-bottom: 15px;">
-                        LINE公式アカウントを活用した<br>
-                        集客・業務効率化の専門企業
-                    </p>
-                    <p style="color: #CCCCCC;">
-                        <i class="fas fa-envelope"></i> tetote.hashimoto@gmail.com<br>
-                        <i class="fas fa-envelope"></i> tetote.d.fukai@gmail.com
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>お問い合わせ</h3>
-                    <p style="color: #CCCCCC; margin-bottom: 20px;">
-                        お気軽にご相談ください
-                    </p>
-                    <a href="../contact.html" class="btn btn-primary">
-                        無料相談を申し込む
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 LINE Pro Solutions. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+}
 
-    <!-- チャット機能 -->
-    <div class="chat-widget">
-        <div class="chat-modal" id="chatModal">
-            <div class="chat-header">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span>集客についてご相談</span>
-                    <button id="closeChat" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">&times;</button>
-                </div>
-            </div>
-            <div class="chat-body">
-                <div class="chat-message">
-                    集客用LINE公式アカウントにご興味をお持ちいただき、ありがとうございます！どちらがお知りになりたいですか？
-                </div>
-                <div class="chat-buttons">
-                    <a href="../contact.html" class="chat-btn">
-                        <i class="fas fa-phone"></i> 無料相談を申し込む
-                    </a>
-                    <a href="#pricing" class="chat-btn">
-                        <i class="fas fa-yen-sign"></i> 料金プランを詳しく
-                    </a>
-                    <a href="back-office.html" class="chat-btn">
-                        <i class="fas fa-cogs"></i> 社内業務も気になる
-                    </a>
-                    <a href="integrated.html" class="chat-btn">
-                        <i class="fas fa-rocket"></i> 統合プランを見る
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <button class="chat-button" id="chatButton">
-            <i class="fas fa-comments"></i>
-        </button>
-    </div>
+.nav-link:hover {
+    color: var(--primary-color);
+}
 
-    <!-- JavaScript -->
-    <script src="../js/main.js"></script>
-</body>
-</html>
+/* ドロップダウンメニュー */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--bg-gray);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+/* モバイルメニュー */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* メインコンテンツ */
+.main {
+    margin-top: 70px;
+}
+
+/* セクション共通スタイル */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: 20px 40px;
+    font-size: 1.1rem;
+}
+
+/* カードレイアウト */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 問題点セクション */
+.problems {
+    background: var(--bg-light);
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.problem-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.problem-text {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 選択肢セクション */
+.choices {
+    text-align: center;
+}
+
+.choices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choice-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.choice-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.choice-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: 600;
+}
+
+.choice-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.choice-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.choice-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 料金テーブル */
+.pricing-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: "おすすめ";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.plan-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.plan-period {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.plan-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    padding: 8px 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 20px;
+}
+
+.plan-features li::before {
+    content: "✓";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 比較テーブル */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: var(--bg-light);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.comparison-table td:first-child {
+    font-weight: 500;
+}
+
+.comparison-table .advantage {
+    background: #E8F5E8;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.comparison-table .disadvantage {
+    background: #FFE8E8;
+    color: #D32F2F;
+}
+
+/* FAQ */
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 25px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.faq-question:hover {
+    background: var(--bg-light);
+}
+
+.faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 25px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 0 25px 25px;
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* フォーム */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* チャット機能 */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-button {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-hover);
+    transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+}
+
+.chat-modal {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    display: none;
+    z-index: 1001;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 16px 16px 0 0;
+    font-weight: 600;
+}
+
+.chat-body {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.chat-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-btn {
+    padding: 12px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.chat-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* フッター */
+.footer {
+    background: #2C2C2C;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #CCCCCC;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-table {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .choices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-modal {
+        width: calc(100vw - 40px);
+        right: 20px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .btn {
+        padding: 14px 24px;
+    }
+    
+    .btn-large {
+        padding: 16px 32px;
+        font-size: 1rem;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* スクロールアニメーション用 */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ユーティリティクラス */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.hidden { display: none; }
