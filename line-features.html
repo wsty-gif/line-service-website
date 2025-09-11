@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE公式アカウント機能一覧 | LINE Pro Solutions</title>
+    <meta name="description" content="LINE公式アカウントで実現できる機能の包括的な説明。メッセージ配信、リッチメニュー、クーポン、分析機能など、ビジネスに活用できる全機能をご紹介。">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">L</div>
+                LINE Pro Solutions
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">ホーム</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">サービス <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services/customer-acquisition.html" class="dropdown-item">
+                            <i class="fas fa-users"></i> 集客用LINE
+                        </a>
+                        <a href="services/back-office.html" class="dropdown-item">
+                            <i class="fas fa-cogs"></i> バックオフィス用LINE
+                        </a>
+                        <a href="services/integrated.html" class="dropdown-item">
+                            <i class="fas fa-rocket"></i> 統合プラン
+                        </a>
+                        <a href="services/training.html" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i> 研修サービス
+                        </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="line-features.html" class="nav-link">機能</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">お問い合わせ</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="contact.html" class="btn btn-primary">無料相談</a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu-btn">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- ヒーローセクション -->
+        <section class="hero" style="background: linear-gradient(135deg, #00C300 0%, #00A000 100%); padding: 100px 0;">
+            <div class="container">
+                <h1 class="hero-title" style="color: white; font-size: 2.5rem;">
+                    LINE公式アカウント機能一覧
+                </h1>
+                <p class="hero-subtitle" style="color: white; opacity: 0.9;">
+                    ビジネスに活用できる全機能をわかりやすく解説
+                </p>
+            </div>
+        </section>
+
+        <!-- 機能カテゴリ一覧 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">LINE公式アカウントでできること</h2>
+                <p class="section-subtitle">
+                    集客から業務効率化まで、幅広いビジネス活用が可能です
+                </p>
+                
+                <div class="cards-grid">
+                    <div class="card" onclick="location.href='#messaging'">
+                        <div class="card-icon" style="background: var(--primary-color);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="card-title">メッセージ配信機能</h3>
+                        <p class="card-description">
+                            テキスト、画像、動画など様々な形式でお客様にメッセージを配信。プッシュ通知で確実に届けられます。
+                        </p>
+                    </div>
+                    
+                    <div class="card" onclick="location.href='#richmenu'">
+                        <div class="card-icon" style="background: var(--accent-color);">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h3 class="card-title">リッチメニュー機能</h3>
+                        <p class="card-description">
+                            トーク画面下部に表示される大きなメニュー。お客様を迷わせない直感的なナビゲーションを提供。
+                        </p>
+                    </div>
+                    
+                    <div class="card" onclick="location.href='#promotion'">
+                        <div class="card-icon" style="background: var(--secondary-color);">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="card-title">クーポン・プロモーション機能</h3>
+                        <p class="card-description">
+                            デジタルクーポンやショップカード、抽選機能でリピート促進と新規獲得を支援。
+                        </p>
+                    </div>
+                    
+                    <div class="card" onclick="location.href='#automation'">
+                        <div class="card-icon" style="background: #9C27B0;">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="card-title">自動化・チャットボット機能</h3>
+                        <p class="card-description">
+                            よくある質問への自動返信やステップ配信で、24時間365日の顧客サポートを実現。
+                        </p>
+                    </div>
+                    
+                    <div class="card" onclick="location.href='#analytics'">
+                        <div class="card-icon" style="background: #FF5722;">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="card-title">分析・レポート機能</h3>
+                        <p class="card-description">
+                            友だち数推移、メッセージ開封率、クリック率など詳細な分析データで効果を可視化。
+                        </p>
+                    </div>
+                    
+                    <div class="card" onclick="location.href='#integration'">
+                        <div class="card-icon" style="background: #607D8B;">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3 class="card-title">外部システム連携機能</h3>
+                        <p class="card-description">
+                            CRMや予約システム、ECサイトとの連携で、より高度なマーケティングオートメーションを実現。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メッセージ配信機能 -->
+        <section id="messaging" class="section" style="background: var(--bg-light);">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                    メッセージ配信機能
+                </h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">テキストメッセージ</h3>
+                        <p class="card-description">
+                            <strong>基本的なテキストメッセージの配信</strong><br>
+                            • 最大5,000文字まで送信可能<br>
+                            • 絵文字やスタンプも使用可能<br>
+                            • URLリンクの挿入も対応<br>
+                            • セグメント配信で対象を絞り込み可能
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">リッチメッセージ</h3>
+                        <p class="card-description">
+                            <strong>画像とテキストを組み合わせた視覚的メッセージ</strong><br>
+                            • 1枚の画像に複数のリンクを設定<br>
+                            • テンプレートまたは完全オーダーメイド<br>
+                            • 商品紹介やイベント告知に最適<br>
+                            • タップ領域を自由に設定可能
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">カードタイプメッセージ</h3>
+                        <p class="card-description">
+                            <strong>複数の商品やサービスをカード形式で紹介</strong><br>
+                            • 最大10枚のカードを横スクロール表示<br>
+                            • 各カードに画像、タイトル、説明文を設定<br>
+                            • ECサイトとの連携で商品詳細に直接誘導<br>
+                            • カルーセル形式でスマートに訴求
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">動画・音声メッセージ</h3>
+                        <p class="card-description">
+                            <strong>より印象的なコンテンツでエンゲージメント向上</strong><br>
+                            • 動画ファイル（MP4）の直接配信<br>
+                            • 音声メッセージ（M4A）の配信<br>
+                            • サムネイル画像の設定可能<br>
+                            • 商品デモや使い方説明に効果的
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin-top: 40px;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">
+                        <i class="fas fa-clock"></i> 配信タイミング機能
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div>
+                            <h4 style="margin-bottom: 10px;">即座配信</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">作成したメッセージをすぐに全友だちに配信</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">予約配信</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">指定した日時に自動でメッセージを配信</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">A/Bテスト配信</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">異なるメッセージを配信して効果を比較</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">セグメント配信</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">性別、年代、地域などで配信対象を絞り込み</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- リッチメニュー機能 -->
+        <section id="richmenu" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-th-large" style="color: var(--accent-color);"></i>
+                    リッチメニュー機能
+                </h2>
+                
+                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 40px;">
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto;">
+                        リッチメニューは、トーク画面の下部に常時表示される大きなメニューです。<br>
+                        お客様が迷うことなく、欲しい情報やサービスにアクセスできる「案内板」の役割を果たします。
+                    </p>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">基本リッチメニュー</h3>
+                        <p class="card-description">
+                            <strong>シンプルで使いやすいメニュー</strong><br>
+                            • 最大6つのボタンを配置可能<br>
+                            • 画像、テキスト、URLリンクを設定<br>
+                            • 外部サイトへの誘導も可能<br>
+                            • 季節やキャンペーンに合わせて変更可能
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">タブ切り替えリッチメニュー</h3>
+                        <p class="card-description">
+                            <strong>複数のメニューを切り替えて表示</strong><br>
+                            • 最大4つのタブでメニューを分類<br>
+                            • 商品カテゴリ別の案内が可能<br>
+                            • 情報量が多い企業に最適<br>
+                            • スッキリとした見た目を維持
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">条件分岐リッチメニュー</h3>
+                        <p class="card-description">
+                            <strong>ユーザーの属性に応じてメニューを出し分け</strong><br>
+                            • 新規顧客とリピーター用で内容変更<br>
+                            • 時間帯や曜日による自動切り替え<br>
+                            • 会員ランク別の専用メニュー表示<br>
+                            • パーソナライズされた体験を提供
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">多言語対応リッチメニュー</h3>
+                        <p class="card-description">
+                            <strong>外国人のお客様にも対応</strong><br>
+                            • 日本語、英語、中国語、韓国語に対応<br>
+                            • ユーザーの言語設定に応じて自動切り替え<br>
+                            • インバウンド対応に最適<br>
+                            • 多様な顧客層にアプローチ可能
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 40px;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 20px; text-align: center;">
+                        リッチメニューでできること
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center;">
+                        <div style="padding: 20px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>オンラインショップ誘導</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">ECサイトの商品ページに直接誘導</p>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h4>予約システム連携</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">予約フォームへワンタップでアクセス</p>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="width: 60px; height: 60px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>店舗案内・アクセス</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Google Mapやアクセス情報を表示</p>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>電話発信</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">ワンタップで店舗に電話をかけられる</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- クーポン・プロモーション機能 -->
+        <section id="promotion" class="section" style="background: var(--bg-light);">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-gift" style="color: var(--secondary-color);"></i>
+                    クーポン・プロモーション機能
+                </h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">デジタルクーポン</h3>
+                        <p class="card-description">
+                            <strong>紙のクーポンをデジタル化で効率アップ</strong><br>
+                            • 割引率、割引額の設定が自由<br>
+                            • 利用期限や利用条件の細かい設定<br>
+                            • 利用状況をリアルタイムで確認<br>
+                            • バーコード表示で店頭での利用も簡単
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">ショップカード</h3>
+                        <p class="card-description">
+                            <strong>デジタルポイントカードでリピート促進</strong><br>
+                            • スタンプ形式またはポイント形式<br>
+                            • 来店や購入でポイント付与<br>
+                            • 貯まったポイントで特典と交換<br>
+                            • 紙のポイントカード紛失リスクゼロ
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">抽選・ガチャ機能</h3>
+                        <p class="card-description">
+                            <strong>ゲーム要素で楽しくエンゲージメント向上</strong><br>
+                            • 当選確率を自由に設定<br>
+                            • 複数の賞品を用意可能<br>
+                            • 参加条件の設定（友だち追加直後など）<br>
+                            • SNSシェア機能で拡散効果も
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">限定配布機能</h3>
+                        <p class="card-description">
+                            <strong>特別感を演出する限定プロモーション</strong><br>
+                            • 先着○名様限定クーポン<br>
+                            • 会員ランク別特典の配布<br>
+                            • 誕生日月限定の特別オファー<br>
+                            • VIP顧客向け先行案内
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin-top: 40px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; text-align: center;">
+                        プロモーション活用例
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">新規獲得</h4>
+                            <ul style="text-align: left; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                <li>友だち追加で10%OFFクーポン</li>
+                                <li>初回来店で抽選参加</li>
+                                <li>お友だち紹介キャンペーン</li>
+                            </ul>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">リピート促進</h4>
+                            <ul style="text-align: left; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                <li>5回来店でスタンプ満了特典</li>
+                                <li>誕生日月限定クーポン</li>
+                                <li>しばらく来店していない方へ復活クーポン</li>
+                            </ul>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">売上アップ</h4>
+                            <ul style="text-align: left; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                <li>まとめ買い割引クーポン</li>
+                                <li>閑散期限定の特別価格</li>
+                                <li>新商品お試しクーポン</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自動化・チャットボット機能 -->
+        <section id="automation" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-robot" style="color: #9C27B0;"></i>
+                    自動化・チャットボット機能
+                </h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">キーワード自動応答</h3>
+                        <p class="card-description">
+                            <strong>よくある質問に24時間365日自動対応</strong><br>
+                            • 「営業時間」「アクセス」などのキーワードで自動返信<br>
+                            • 複数のキーワードに対応<br>
+                            • テキスト、画像、リンクを返信可能<br>
+                            • 人件費削減と顧客満足度向上を両立
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">ステップ配信</h3>
+                        <p class="card-description">
+                            <strong>友だち追加後の自動フォローアップ</strong><br>
+                            • 友だち追加から○日後に自動配信<br>
+                            • 段階的な商品・サービス紹介<br>
+                            • 顧客育成（ナーチャリング）に最適<br>
+                            • 最大10ステップまで設定可能
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">AI応答メッセージ</h3>
+                        <p class="card-description">
+                            <strong>自然な会話でお客様をサポート</strong><br>
+                            • AIが文脈を理解して適切に返信<br>
+                            • 学習機能で回答精度が向上<br>
+                            • 複雑な質問も段階的に解決<br>
+                            • 有人対応への切り替えも可能
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">予約・注文受付自動化</h3>
+                        <p class="card-description">
+                            <strong>LINE内で予約・注文を完結</strong><br>
+                            • 対話形式で予約日時を選択<br>
+                            • メニュー選択から決済まで自動化<br>
+                            • 予約確認・リマインド配信<br>
+                            • 外部システムとの連携も対応
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 40px;">
+                    <h3 style="color: #9C27B0; margin-bottom: 20px; text-align: center;">
+                        自動化で実現できること
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center;">
+                        <div style="padding: 20px; background: white; border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>24時間365日対応</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">営業時間外でもお客様の質問に自動で回答</p>
+                        </div>
+                        <div style="padding: 20px; background: white; border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: #FF9800; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>人件費削減</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">単純な質問対応を自動化して人的コストを削減</p>
+                        </div>
+                        <div style="padding: 20px; background: white; border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: #2196F3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <h4>顧客満足度向上</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">即座に回答が得られる快適な体験を提供</p>
+                        </div>
+                        <div style="padding: 20px; background: white; border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: #E91E63; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>機会損失防止</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">迅速な対応で購買意欲を逃さない</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分析・レポート機能 -->
+        <section id="analytics" class="section" style="background: var(--bg-light);">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-bar" style="color: #FF5722;"></i>
+                    分析・レポート機能
+                </h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">友だち分析</h3>
+                        <p class="card-description">
+                            <strong>友だちの増減と属性を詳細分析</strong><br>
+                            • 友だち数の推移をグラフで表示<br>
+                            • 性別・年代・地域別の分布<br>
+                            • 友だち追加経路の特定<br>
+                            • ブロック率や要因の分析
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">メッセージ分析</h3>
+                        <p class="card-description">
+                            <strong>配信したメッセージの効果を数値で確認</strong><br>
+                            • 開封率（既読率）の測定<br>
+                            • クリック率とクリック先の分析<br>
+                            • 配信時間帯別の効果比較<br>
+                            • メッセージ内容による反応の違い
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">リッチメニュー分析</h3>
+                        <p class="card-description">
+                            <strong>どのメニューがよく使われているかを把握</strong><br>
+                            • 各ボタンのクリック数<br>
+                            • 時間帯別の利用パターン<br>
+                            • ユーザー属性別の利用傾向<br>
+                            • メニュー改善のヒントを発見
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">クーポン利用分析</h3>
+                        <p class="card-description">
+                            <strong>プロモーション効果を正確に測定</strong><br>
+                            • クーポン利用率の計算<br>
+                            • 利用者の属性分析<br>
+                            • 売上への貢献度算出<br>
+                            • ROI（投資対効果）の可視化
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin-top: 40px;">
+                    <h3 style="color: #FF5722; margin-bottom: 20px; text-align: center;">
+                        データ活用で実現できる改善
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 15px;">
+                                <i class="fas fa-bullseye"></i> ターゲティング精度向上
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                年代・性別・地域別の反応データから、最も効果的なターゲット層を特定。
+                                無駄な配信を減らし、より響くメッセージを届けることができます。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 15px;">
+                                <i class="fas fa-clock"></i> 最適配信時間の発見
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                時間帯別の開封率データから、あなたの友だちが最もアクティブな時間を特定。
+                                同じ内容でも配信時間を変えるだけで反応率が大幅に向上します。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 15px;">
+                                <i class="fas fa-edit"></i> コンテンツ改善
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                メッセージ内容による反応の違いを分析。
+                                どんな文章・画像・キャンペーンが効果的かを科学的に把握できます。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 15px;">
+                                <i class="fas fa-dollar-sign"></i> ROI最適化
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                クーポン利用率や売上貢献度を正確に測定。
+                                どのプロモーションが最も投資対効果が高いかを数値で判断できます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 外部システム連携機能 -->
+        <section id="integration" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-plug" style="color: #607D8B;"></i>
+                    外部システム連携機能
+                </h2>
+                
+                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 40px;">
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto;">
+                        LINE公式アカウントを既存システムと連携することで、<br>
+                        さらに高度なマーケティングオートメーションやカスタマーサポートを実現できます。
+                    </p>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">CRM連携</h3>
+                        <p class="card-description">
+                            <strong>顧客管理システムとの完全連携</strong><br>
+                            • 購買履歴と連動したパーソナライズ配信<br>
+                            • 顧客ランク別の自動メッセージ<br>
+                            • リードスコアリングの自動化<br>
+                            • 営業チームへの見込み客情報自動転送
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">ECサイト連携</h3>
+                        <p class="card-description">
+                            <strong>オンラインショップとシームレス接続</strong><br>
+                            • 商品情報の自動取得・更新<br>
+                            • カート放棄時の自動リマインド<br>
+                            • 在庫切れ時の入荷通知<br>
+                            • 購入完了後のフォローアップ配信
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">予約システム連携</h3>
+                        <p class="card-description">
+                            <strong>予約管理の完全自動化</strong><br>
+                            • LINE内での予約受付<br>
+                            • 空き状況のリアルタイム表示<br>
+                            • 予約確認・変更・キャンセル対応<br>
+                            • 予約前日のリマインド配信
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">決済システム連携</h3>
+                        <p class="card-description">
+                            <strong>LINE内で決済まで完結</strong><br>
+                            • LINE Pay決済の組み込み<br>
+                            • クレジットカード決済対応<br>
+                            • 継続課金・サブスクリプション対応<br>
+                            • 決済完了時の自動レシート送信
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 40px;">
+                    <h3 style="color: #607D8B; margin-bottom: 20px; text-align: center;">
+                        主要連携サービス例
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+                        <div>
+                            <h4 style="margin-bottom: 10px;">CRM・SFA</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Salesforce、HubSpot、kintone、Sansan</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">ECプラットフォーム</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Shopify、BASE、楽天市場、Amazon</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">予約システム</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">TableCheck、Airリザーブ、RESERVA</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">決済サービス</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">LINE Pay、Stripe、PayPal、Square</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">MAツール</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Marketo、Pardot、Marketing Cloud</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 10px;">分析ツール</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Google Analytics、Adobe Analytics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA セクション -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white;">
+            <div class="container" style="text-align: center;">
+                <h2 style="color: white; margin-bottom: 20px;">これらの機能を最大限活用しませんか？</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+                    LINE公式アカウントの豊富な機能を、プロがあなたのビジネスに最適化します。<br>
+                    まずは無料相談で、どの機能があなたのビジネスに効果的かお聞かせください。
+                </p>
+                <a href="contact.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-calendar-alt"></i> 無料相談を予約する
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>サービス</h3>
+                    <ul>
+                        <li><a href="services/customer-acquisition.html">集客用LINE</a></li>
+                        <li><a href="services/back-office.html">バックオフィス用LINE</a></li>
+                        <li><a href="services/integrated.html">統合プラン</a></li>
+                        <li><a href="services/training.html">研修サービス</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>機能・情報</h3>
+                    <ul>
+                        <li><a href="line-features.html">LINE機能一覧</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <p style="color: #CCCCCC; margin-bottom: 15px;">
+                        LINE公式アカウントを活用した<br>
+                        集客・業務効率化の専門企業
+                    </p>
+                    <p style="color: #CCCCCC;">
+                        <i class="fas fa-envelope"></i> tetote.hashimoto@gmail.com<br>
+                        <i class="fas fa-envelope"></i> tetote.d.fukai@gmail.com
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>お問い合わせ</h3>
+                    <p style="color: #CCCCCC; margin-bottom: 20px;">
+                        お気軽にご相談ください
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">
+                        無料相談を申し込む
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LINE Pro Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- チャット機能 -->
+    <div class="chat-widget">
+        <div class="chat-modal" id="chatModal">
+            <div class="chat-header">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>機能についてご質問</span>
+                    <button id="closeChat" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    LINE公式アカウントの機能について、どちらがお知りになりたいですか？
+                </div>
+                <div class="chat-buttons">
+                    <a href="services/customer-acquisition.html" class="chat-btn">
+                        <i class="fas fa-users"></i> 集客での活用方法
+                    </a>
+                    <a href="services/back-office.html" class="chat-btn">
+                        <i class="fas fa-cogs"></i> 業務効率化での活用
+                    </a>
+                    <a href="services/training.html" class="chat-btn">
+                        <i class="fas fa-graduation-cap"></i> 自社で運用したい
+                    </a>
+                    <a href="contact.html" class="chat-btn">
+                        <i class="fas fa-phone"></i> 直接相談したい
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
