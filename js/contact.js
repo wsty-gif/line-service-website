@@ -123,62 +123,38 @@ function clearFieldError(field) {
 
 // フォーム送信
 async function submitForm() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    
-    // ローディング状態
-    const originalText = showLoading(submitBtn);
-    
-    // フォームデータを収集
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMessage = document.getElementById('successMessage');
+  const errorMessage = document.getElementById('errorMessage');
+
+  const originalText = showLoading(submitBtn);
+
+  try {
     const formData = new FormData(form);
-    const data = {
-        company: formData.get('company'),
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone') || '',
-        service: formData.get('service'),
-        employees: formData.get('employees') || '',
-        industry: formData.get('industry') || '',
-        timeline: formData.get('timeline') || '',
-        message: formData.get('message'),
-        referrer: formData.get('referrer') || '',
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        url: window.location.href
-    };
-    
-    try {
-        // EmailJSを使用してメール送信をシミュレート
-        // 実際の実装では、バックエンドAPIまたはEmailJSなどのサービスを使用
-        const success = await sendEmail(data);
-        
-        if (success) {
-            // 成功
-            hideLoading(submitBtn, originalText);
-            form.style.display = 'none';
-            successMessage.classList.remove('hidden');
-            
-            // 成功通知
-            showNotification('お問い合わせを送信しました', 'success');
-            
-            // ページトップにスクロール
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-        } else {
-            throw new Error('送信に失敗しました');
-        }
-        
-    } catch (error) {
-        console.error('Form submission error:', error);
-        
-        hideLoading(submitBtn, originalText);
-        errorMessage.classList.remove('hidden');
-        
-        // エラー通知
-        showNotification('送信に失敗しました。直接メールでお問い合わせください。', 'error');
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    hideLoading(submitBtn, originalText);
+
+    if (response.ok) {
+      form.reset();
+      form.style.display = "none";
+      successMessage.classList.remove("hidden");
+      showNotification("お問い合わせを送信しました", "success");
+    } else {
+      throw new Error("送信失敗");
     }
+  } catch (error) {
+    console.error(error);
+    hideLoading(submitBtn, originalText);
+    errorMessage.classList.remove("hidden");
+    showNotification("送信に失敗しました。直接メールでお問い合わせください。", "error");
+  }
 }
 
 // メール送信処理（シミュレーション）
