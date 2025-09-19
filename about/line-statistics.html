@@ -21,10 +21,10 @@
             
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="./index.html" class="nav-link">ホーム</a>
+                    <a href="../index.html" class="nav-link">ホーム</a>
                 </li>
                 <li class="nav-item">
-                    <a href="./index.html" class="nav-link">Linetについて</a>
+                    <a href="../index.html" class="nav-link">Linetについて</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">LINEについて <i class="fas fa-chevron-down"></i></a>
@@ -169,10 +169,16 @@
                     <h3 style="color: var(--primary-color); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">
                         <i class="fas fa-chart-line"></i> 他SNSとの利用率比較
                     </h3>
-                    <div style="height: 400px;">
-                        <canvas id="snsComparisonChart"></canvas>
+                    
+                    <!-- レスポンシブ画像コンテナ -->
+                    <div class="chart-image-container" style="position: relative; width: 100%; margin-bottom: 20px;">
+                        <img src="../images/sns_utilization_comparison_2024.png" 
+                             alt="SNS利用率比較グラフ 2024年" 
+                             loading="lazy"
+                             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block;">
                     </div>
-                    <p style="text-align: center; margin-top: 20px; color: var(--text-secondary);">
+                    
+                    <p style="text-align: center; color: var(--text-secondary);">
                         LINEは日本で最も利用されているコミュニケーションプラットフォーム
                     </p>
                 </div>
@@ -222,10 +228,16 @@
                     <h3 style="color: var(--primary-color); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">
                         <i class="fas fa-industry"></i> 業界別LINE公式アカウント活用状況
                     </h3>
-                    <div style="height: 400px;">
-                        <canvas id="industryUsageChart"></canvas>
+
+                    <!-- レスポンシブ画像コンテナ -->
+                    <div class="chart-image-container" style="position: relative; width: 100%; margin-bottom: 20px;">
+                        <img src="../images/line_industry_usage_2024.png" 
+                             alt="SNS利用率比較グラフ 2024年" 
+                             loading="lazy"
+                             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block;">
                     </div>
-                    <p style="text-align: center; margin-top: 20px; color: var(--text-secondary);">
+
+                    <p style="text-align: center; color: var(--text-secondary);">
                         小売・飲食業界を中心に、あらゆる業界でLINE活用が進展
                     </p>
                 </div>
