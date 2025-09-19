@@ -20,8 +20,8 @@ LINE公式アカウントを活用した集客・社内業務効率化・マニ�
 7. **お問い合わせページ** (`contact.html`) - フォーム機能付きの問い合わせページ
 
 #### 🆕 新規追加: LINEについてセクション
-8. **LINE統計・データページ** (`about/line-statistics.html`) - LINE利用統計、データ分析、Chart.jsグラフ
-9. **ビジネス最適な理由ページ** (`about/why-line-business.html`) - LINEがビジネスに適している理由、ROI分析
+8. **LINEの利用統計・データページ** (`about/line-statistics.html`) - LINE利用統計、データ分析、Chart.jsグラフ
+9. **ビジネスに最適な理由ページ** (`about/why-line-business.html`) - LINEがビジネスに適している理由、ROI分析
 10. **成功事例・実績ページ** (`about/line-success-cases.html`) - 成功ケーススタディ、実績データ
 11. **競合ツールとの比較ページ** (`about/competitor-comparison.html`) - 他プラットフォームとの詳細比較
 
@@ -57,8 +57,8 @@ LINE公式アカウントを活用した集客・社内業務効率化・マニ�
 │   ├── main.js                    # メイン機能JavaScript
 │   └── contact.js                 # お問い合わせフォーム用JavaScript
 ├── about/                         # 🆕 新規追加: LINEについてセクション
-│   ├── line-statistics.html       # LINE統計・データページ
-│   ├── why-line-business.html     # ビジネス最適な理由ページ
+│   ├── line-statistics.html       # LINEの利用統計・データページ
+│   ├── why-line-business.html     # ビジネスに最適な理由ページ
 │   ├── line-success-cases.html    # 成功事例・実績ページ
 │   └── competitor-comparison.html # 競合ツールとの比較ページ
 └── services/
