@@ -486,6 +486,41 @@
         </div>
     </footer>
 
+    <!-- チャット機能 -->
+    <div class="chat-widget">
+        <div class="chat-modal" id="chatModal">
+            <div class="chat-header">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>お問い合わせサポート</span>
+                    <button id="closeChat" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    お問い合わせいただき、ありがとうございます！フォームの入力でご不明な点がございましたら、お気軽にお声がけください。
+                </div>
+                <div class="chat-buttons">
+                    <a href="services/customer-acquisition.html" class="chat-btn">
+                        <i class="fas fa-users"></i> 集客用LINEについて
+                    </a>
+                    <a href="services/back-office.html" class="chat-btn">
+                        <i class="fas fa-cogs"></i> 業務効率化について
+                    </a>
+                    <a href="services/integrated.html" class="chat-btn">
+                        <i class="fas fa-rocket"></i> 統合プランについて
+                    </a>
+                    <a href="services/training.html" class="chat-btn">
+                        <i class="fas fa-graduation-cap"></i> 研修について
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
     <script>
