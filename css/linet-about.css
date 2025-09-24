@@ -1,0 +1,1097 @@
+/* ========================================
+   LINET ABOUT PAGE - 独立CSS
+   既存サイトとの競合回避のため、すべてのクラス名に
+   linet- プレフィックスを使用
+======================================== */
+
+/* ========================================
+   リセット & 基本設定
+======================================== */
+.linet-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.linet-page {
+    --linet-primary-color: #00B900;        /* LINE緑 */
+    --linet-secondary-color: #0084FF;      /* 青 */
+    --linet-accent-color: #FF6B6B;         /* アクセント赤 */
+    --linet-text-dark: #333333;
+    --linet-text-light: #666666;
+    --linet-text-muted: #999999;
+    --linet-bg-light: #F8F9FA;
+    --linet-bg-white: #FFFFFF;
+    --linet-border-color: #E9ECEF;
+    --linet-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --linet-shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --linet-gradient-primary: linear-gradient(135deg, #00B900 0%, #00A000 100%);
+    --linet-gradient-secondary: linear-gradient(135deg, #0084FF 0%, #006BD6 100%);
+
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--linet-text-dark);
+    background-color: var(--linet-bg-white);
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* ========================================
+   共通クラス
+======================================== */
+.linet-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.linet-highlight {
+    background: linear-gradient(transparent 60%, #FFE66D 60%);
+    font-weight: 600;
+}
+
+.linet-highlight-green {
+    color: var(--linet-primary-color);
+    font-weight: 600;
+}
+
+.linet-highlight-blue {
+    color: var(--linet-secondary-color);
+    font-weight: 600;
+}
+
+.linet-cross {
+    font-size: 1.2em;
+    margin: 0 15px;
+    color: var(--linet-accent-color);
+    font-weight: 700;
+}
+
+/* ========================================
+   ボタンスタイル
+======================================== */
+.linet-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    min-width: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.linet-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.linet-btn:hover::before {
+    left: 100%;
+}
+
+.linet-btn-primary {
+    background: var(--linet-gradient-primary);
+    color: white;
+    box-shadow: var(--linet-shadow-light);
+}
+
+.linet-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--linet-shadow-medium);
+}
+
+.linet-btn-secondary {
+    background: white;
+    color: var(--linet-text-dark);
+    border: 2px solid var(--linet-border-color);
+}
+
+.linet-btn-secondary:hover {
+    border-color: var(--linet-primary-color);
+    color: var(--linet-primary-color);
+    background: rgba(0, 185, 0, 0.05);
+}
+
+.linet-btn-line {
+    background: var(--linet-gradient-primary);
+    color: white;
+    font-size: 18px;
+    padding: 16px 32px;
+}
+
+.linet-btn-form {
+    background: var(--linet-gradient-secondary);
+    color: white;
+    font-size: 18px;
+    padding: 16px 32px;
+}
+
+.linet-btn-large {
+    font-size: 18px;
+    padding: 18px 36px;
+    min-width: 200px;
+}
+
+.linet-btn-submit {
+    background: var(--linet-gradient-primary);
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    padding: 16px;
+}
+
+/* ========================================
+   ナビゲーション
+======================================== */
+.linet-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--linet-shadow-light);
+}
+
+.linet-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.linet-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--linet-primary-color);
+    text-decoration: none;
+}
+
+.linet-nav-logo i {
+    font-size: 28px;
+}
+
+.linet-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.linet-nav-link {
+    text-decoration: none;
+    color: var(--linet-text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    position: relative;
+}
+
+.linet-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--linet-primary-color);
+    transition: width 0.3s ease;
+}
+
+.linet-nav-link:hover::after,
+.linet-nav-link.active::after {
+    width: 100%;
+}
+
+.linet-nav-link:hover {
+    color: var(--linet-primary-color);
+}
+
+.linet-nav-link.linet-cta-button {
+    background: var(--linet-gradient-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.linet-nav-link.linet-cta-button::after {
+    display: none;
+}
+
+.linet-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 5px;
+}
+
+.linet-hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--linet-text-dark);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.linet-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.linet-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.linet-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ========================================
+   ヒーロー セクション
+======================================== */
+.linet-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px;
+}
+
+.linet-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0, 185, 0, 0.1) 0%, transparent 70%);
+    animation: linet-hero-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes linet-hero-float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.linet-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.linet-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.linet-hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--linet-text-dark);
+    animation: linet-fadeInUp 0.8s ease-out;
+}
+
+.linet-hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--linet-text-light);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: linet-fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.linet-hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: linet-fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.linet-hero-image {
+    text-align: center;
+    animation: linet-fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.linet-hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--linet-shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.linet-hero-img:hover {
+    transform: scale(1.02);
+}
+
+.linet-hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.linet-hero-scroll-indicator a {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--linet-primary-color);
+    box-shadow: var(--linet-shadow-light);
+    animation: linet-bounce 2s infinite;
+}
+
+@keyframes linet-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes linet-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   問題提起セクション
+======================================== */
+.linet-problems {
+    padding: 100px 0;
+    background: var(--linet-bg-white);
+    position: relative;
+}
+
+.linet-problem-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.linet-problem-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: var(--linet-bg-light);
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.linet-problem-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--linet-primary-color);
+    box-shadow: var(--linet-shadow-medium);
+}
+
+.linet-problem-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.linet-problem-item p {
+    font-size: 1.1rem;
+    color: var(--linet-text-dark);
+    font-weight: 500;
+}
+
+.linet-solution-text {
+    text-align: center;
+}
+
+.linet-solution-lead {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--linet-text-light);
+}
+
+.linet-solution-title {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--linet-text-dark);
+}
+
+/* ========================================
+   スクロールナビゲーション
+======================================== */
+.linet-point-list-wrap {
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+.linet-nav-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--linet-text-light);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.linet-point-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.linet-point-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: white;
+    border: 2px solid var(--linet-border-color);
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--linet-shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.linet-point-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--linet-primary-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.linet-point-item:hover {
+    border-color: var(--linet-primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--linet-shadow-medium);
+}
+
+.linet-point-item:hover::before {
+    transform: scaleY(1);
+}
+
+.linet-point-item-no {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--linet-primary-color);
+    margin-right: 15px;
+    min-width: 35px;
+}
+
+.linet-point-item-title {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--linet-text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.4;
+}
+
+.linet-point-item-title i {
+    color: var(--linet-text-muted);
+    font-size: 0.9rem;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.linet-point-item:hover .linet-point-item-title i {
+    color: var(--linet-primary-color);
+    transform: translateY(3px);
+}
+
+/* ========================================
+   ポイントセクション
+======================================== */
+.linet-point-section {
+    padding: 100px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linet-point-section.linet-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.linet-point-section:nth-child(even) {
+    background: var(--linet-bg-light);
+}
+
+.linet-point-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.linet-point-number {
+    display: inline-block;
+    background: var(--linet-gradient-primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.linet-point-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--linet-text-dark);
+}
+
+.linet-point-subtitle {
+    font-size: 1.2rem;
+    color: var(--linet-text-light);
+}
+
+.linet-point-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.linet-point-content.reverse {
+    direction: rtl;
+}
+
+.linet-point-content.reverse > * {
+    direction: ltr;
+}
+
+.linet-point-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--linet-text-light);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.linet-point-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.linet-point-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.linet-point-list i {
+    color: var(--linet-primary-color);
+    font-size: 1.3rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.linet-point-note {
+    font-size: 0.95rem;
+    color: var(--linet-primary-color);
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: rgba(0, 185, 0, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--linet-primary-color);
+    font-weight: 500;
+}
+
+.linet-point-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--linet-shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.linet-point-img:hover {
+    transform: scale(1.02);
+}
+
+/* ========================================
+   導入フローセクション
+======================================== */
+.linet-flow-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.linet-step {
+    text-align: center;
+    max-width: 250px;
+}
+
+.linet-step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--linet-gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+}
+
+.linet-step:hover .linet-step-number {
+    transform: scale(1.1);
+}
+
+.linet-step-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--linet-text-dark);
+}
+
+.linet-step-content p {
+    color: var(--linet-text-light);
+    margin-bottom: 15px;
+}
+
+.linet-step-icon {
+    font-size: 2rem;
+    color: var(--linet-secondary-color);
+}
+
+.linet-step-arrow {
+    font-size: 1.5rem;
+    color: var(--linet-text-muted);
+}
+
+.linet-cta-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ========================================
+   クロージングセクション
+======================================== */
+.linet-closing {
+    padding: 100px 0;
+    background: var(--linet-bg-light);
+    text-align: center;
+    position: relative;
+}
+
+.linet-closing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--linet-gradient-primary);
+}
+
+.linet-closing-title {
+    font-size: clamp(1.9rem, 3vw, 2.3rem);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: var(--linet-text-dark);
+    font-weight: 700;
+}
+
+.linet-closing-subtitle {
+    font-size: 1.2rem;
+    color: var(--linet-text-light);
+    margin-bottom: 50px;
+}
+
+.linet-contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   お問い合わせフォーム
+======================================== */
+.linet-contact-form-section {
+    padding: 100px 0;
+    background: var(--linet-bg-white);
+}
+
+.linet-form-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--linet-text-dark);
+}
+
+.linet-contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.linet-form-group {
+    margin-bottom: 25px;
+}
+
+.linet-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--linet-text-dark);
+}
+
+.linet-form-group input,
+.linet-form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--linet-border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: white;
+}
+
+.linet-form-group input:focus,
+.linet-form-group textarea:focus {
+    outline: none;
+    border-color: var(--linet-primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 185, 0, 0.1);
+}
+
+.linet-field-error {
+    color: var(--linet-accent-color);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.linet-form-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.linet-form-message.success {
+    background: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+}
+
+.linet-form-message.error {
+    background: #F8D7DA;
+    color: #721C24;
+    border: 1px solid #F5C6CB;
+}
+
+/* ========================================
+   フッター
+======================================== */
+.linet-footer {
+    background: var(--linet-text-dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.linet-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.linet-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.linet-footer-logo i {
+    font-size: 24px;
+    color: var(--linet-primary-color);
+}
+
+.linet-footer-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.linet-footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.linet-footer-nav a:hover {
+    color: var(--linet-primary-color);
+}
+
+.linet-footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: var(--linet-text-muted);
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+
+/* タブレット */
+@media (max-width: 1024px) {
+    .linet-hero-content {
+        gap: 40px;
+    }
+
+    .linet-point-content {
+        gap: 40px;
+    }
+
+    .linet-point-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* モバイル */
+@media (max-width: 768px) {
+    .linet-nav-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40px 0;
+        box-shadow: var(--linet-shadow-medium);
+        z-index: 999;
+    }
+
+    .linet-nav-menu.active {
+        display: flex;
+    }
+
+    .linet-nav-menu li {
+        margin-bottom: 20px;
+    }
+
+    .linet-nav-link {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+
+    .linet-hamburger {
+        display: flex;
+    }
+
+    .linet-point-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .linet-point-item {
+        padding: 18px 20px;
+    }
+
+    .linet-point-item-title {
+        font-size: 1rem;
+    }
+
+    .linet-nav-intro {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .linet-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .linet-point-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .linet-point-content.reverse {
+        direction: ltr;
+    }
+
+    .linet-flow-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .linet-step-arrow {
+        transform: rotate(90deg);
+    }
+
+    .linet-contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linet-footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .linet-footer-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .linet-container {
+        padding: 0 15px;
+    }
+
+    .linet-point-section {
+        padding: 60px 0;
+    }
+
+    .linet-btn {
+        min-width: auto;
+        padding: 12px 24px;
+    }
+
+    .linet-problem-items {
+        grid-template-columns: 1fr;
+    }
+
+    .linet-point-list {
+        grid-template-columns: 1fr;
+    }
+
+    .linet-point-item {
+        padding: 15px 18px;
+    }
+}
+
+/* ========================================
+   パフォーマンス最適化
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   プリント対応
+======================================== */
+@media print {
+    .linet-navigation,
+    .linet-hamburger,
+    .linet-hero-scroll-indicator {
+        display: none;
+    }
+
+    .linet-page {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .linet-point-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   高コントラスト対応
+======================================== */
+@media (prefers-contrast: high) {
+    .linet-page {
+        --linet-text-light: #000000;
+        --linet-border-color: #000000;
+    }
+
+    .linet-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ========================================
+   ダークモード対応（将来の拡張用）
+======================================== */
+@media (prefers-color-scheme: dark) {
+    .linet-page {
+        --linet-bg-white: #1a1a1a;
+        --linet-bg-light: #2d2d2d;
+        --linet-text-dark: #ffffff;
+        --linet-text-light: #cccccc;
+        --linet-border-color: #404040;
+    }
+}
