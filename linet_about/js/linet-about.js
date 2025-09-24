@@ -1,12 +1,12 @@
-/**
- * ========================================
- * LINET ABOUT PAGE - 独立JavaScript
- * 既存サイトとの競合回避のため、すべての関数・変数に
- * Linet プレフィックスまたはスコープを使用
- * ========================================
- */
+/* ========================================
+ * LINET ABOUT PAGE - 修正版
+ * - 無限再帰の修正（init() <-> bindEvents() の相互呼び出しを解消）
+ * - initLazyLoading -> setupLazyLoading に変更
+ * - 初期化フラグ追加（多重初期化防止）
+ * - handleError のログ改善
+ * - destroy の安全なイベント解除
+ * ======================================== */
 
-// 名前空間の作成（グローバル汚染を防ぐ）
 const LinetAbout = {
     // 設定
     config: {
@@ -22,12 +22,17 @@ const LinetAbout = {
         isMenuOpen: false,
         isScrolling: false,
         currentSection: 'hero',
-        observers: new Map()
+        observers: new Map(),
+        isInitialized: false
     },
 
     // 初期化
     init() {
-        this.bindEvents();
+        // 多重初期化防止
+        if (this.state.isInitialized) return;
+        this.state.isInitialized = true;
+
+        // 初期化処理（bindEvents は外で呼ばれるようにしているためここでは呼ばない）
         this.initNavigation();
         this.initScrollAnimations();
         this.initContactForm();
@@ -40,14 +45,15 @@ const LinetAbout = {
 
     // イベントバインディング
     bindEvents() {
-        // DOM読み込み完了
+        // DOM読み込み完了時に init を呼ぶ（既に読み込み済みなら即実行）
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init());
         } else {
+            // DOM が既に読み込まれている場合は即初期化
             this.init();
         }
 
-        // ページ読み込み完了
+        // ページ読み込み完了（リソース読み込み後）の処理
         window.addEventListener('load', () => {
             this.handlePageLoad();
         });
@@ -58,8 +64,8 @@ const LinetAbout = {
         }, this.config.throttleDelay));
 
         // エラーハンドリング
-        window.addEventListener('error', (error) => {
-            this.handleError(error);
+        window.addEventListener('error', (errorEvent) => {
+            this.handleError(errorEvent);
         });
     },
 
@@ -198,19 +204,15 @@ const LinetAbout = {
             rootMargin: '0px 0px -50px 0px'
         };
 
-        // メインアニメーション
         const mainObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('linet-animate');
-
-                    // パフォーマンス向上のため、一度アニメートした要素は監視解除
                     mainObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // アニメーション対象要素
         const animateElements = document.querySelectorAll(
             '.linet-point-section, .linet-problem-item'
         );
@@ -247,7 +249,7 @@ const LinetAbout = {
     },
 
     animateCount(element) {
-        const targetCount = parseInt(element.getAttribute('data-count'));
+        const targetCount = parseInt(element.getAttribute('data-count')) || 0;
         const duration = 2000; // 2秒
         const start = Date.now();
         const startCount = 0;
@@ -256,7 +258,6 @@ const LinetAbout = {
             const elapsed = Date.now() - start;
             const progress = Math.min(elapsed / duration, 1);
 
-            // イージングを適用
             const easedProgress = this.easeOutExpo(progress);
             const currentCount = Math.floor(startCount + (targetCount - startCount) * easedProgress);
 
@@ -289,7 +290,6 @@ const LinetAbout = {
             this.toggleMobileMenu();
         });
 
-        // メニューリンククリック時に閉じる
         const navLinks = navMenu.querySelectorAll('.linet-nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -297,7 +297,6 @@ const LinetAbout = {
             });
         });
 
-        // メニュー外クリックで閉じる
         document.addEventListener('click', (e) => {
             if (this.state.isMenuOpen && 
                 !hamburger.contains(e.target) && 
@@ -332,8 +331,8 @@ const LinetAbout = {
         const hamburger = document.querySelector('.linet-hamburger');
         const navMenu = document.querySelector('.linet-nav-menu');
 
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
         document.body.style.overflow = '';
     },
 
@@ -349,7 +348,6 @@ const LinetAbout = {
             this.handleFormSubmit(e);
         });
 
-        // リアルタイムバリデーション
         const formInputs = contactForm.querySelectorAll('input, textarea');
         formInputs.forEach(input => {
             input.addEventListener('blur', () => {
@@ -367,42 +365,34 @@ const LinetAbout = {
 
         const form = e.target;
 
-        // バリデーション
         if (!this.validateForm(form)) {
             return;
         }
 
-        // 送信ボタン状態変更
         const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
+        const originalText = submitButton ? submitButton.innerHTML : '';
 
-        this.setSubmitButtonState(submitButton, 'loading');
+        if (submitButton) this.setSubmitButtonState(submitButton, 'loading');
 
         try {
-            // フォームデータ準備
             const formData = new FormData(form);
             const formObject = Object.fromEntries(formData);
 
-            // 送信処理（実際のAPI呼び出しに置き換え可能）
             await this.submitForm(formObject);
 
-            // 成功処理
             this.showFormMessage('お問い合わせありがとうございます。24時間以内にご連絡いたします。', 'success');
             form.reset();
 
         } catch (error) {
-            // エラー処理
             this.showFormMessage('送信に失敗しました。しばらく時間をおいて再度お試しください。', 'error');
             console.error('Form submission error:', error);
 
         } finally {
-            // 送信ボタンを元に戻す
-            this.setSubmitButtonState(submitButton, 'normal', originalText);
+            if (submitButton) this.setSubmitButtonState(submitButton, 'normal', originalText);
         }
     },
 
     async submitForm(formData) {
-        // 実際の送信処理をシミュレート
         return new Promise((resolve) => {
             setTimeout(() => {
                 console.log('Form submitted:', formData);
@@ -429,14 +419,12 @@ const LinetAbout = {
         let isValid = true;
         const requiredFields = form.querySelectorAll('[required]');
 
-        // すべての必須フィールドをチェック
         requiredFields.forEach(field => {
             if (!this.validateField(field)) {
                 isValid = false;
             }
         });
 
-        // 追加のカスタムバリデーション
         const emailField = form.querySelector('[type="email"]');
         if (emailField && emailField.value && !this.validateField(emailField)) {
             isValid = false;
@@ -446,17 +434,15 @@ const LinetAbout = {
     },
 
     validateField(field) {
-        const value = field.value.trim();
+        const value = (field.value || '').trim();
         let isValid = true;
         let errorMessage = '';
 
-        // 必須チェック
         if (field.hasAttribute('required') && !value) {
             isValid = false;
             errorMessage = 'このフィールドは必須です。';
         }
 
-        // メールアドレス形式チェック
         if (field.type === 'email' && value) {
             if (!this.isValidEmail(value)) {
                 isValid = false;
@@ -464,7 +450,6 @@ const LinetAbout = {
             }
         }
 
-        // 電話番号チェック（任意）
         if (field.type === 'tel' && value) {
             if (!this.isValidPhone(value)) {
                 isValid = false;
@@ -472,7 +457,6 @@ const LinetAbout = {
             }
         }
 
-        // エラー表示更新
         if (isValid) {
             this.clearFieldError(field);
         } else {
@@ -507,17 +491,17 @@ const LinetAbout = {
     },
 
     clearFieldError(field) {
+        if (!field) return;
         field.style.borderColor = '';
         field.removeAttribute('aria-invalid');
 
-        const errorElement = field.parentNode.querySelector('.linet-field-error');
+        const errorElement = field.parentNode ? field.parentNode.querySelector('.linet-field-error') : null;
         if (errorElement) {
             errorElement.remove();
         }
     },
 
     showFormMessage(message, type) {
-        // 既存メッセージを削除
         const existingMessage = document.querySelector('.linet-form-message');
         if (existingMessage) {
             existingMessage.remove();
@@ -529,9 +513,10 @@ const LinetAbout = {
         messageElement.setAttribute('role', 'alert');
 
         const form = document.querySelector('.linet-contact-form');
+        if (!form || !form.parentNode) return;
+
         form.parentNode.insertBefore(messageElement, form);
 
-        // アニメーション
         messageElement.style.opacity = '0';
         messageElement.style.transform = 'translateY(-10px)';
 
@@ -541,7 +526,6 @@ const LinetAbout = {
             messageElement.style.transform = 'translateY(0)';
         });
 
-        // 自動削除
         setTimeout(() => {
             if (messageElement.parentNode) {
                 messageElement.style.opacity = '0';
@@ -557,7 +541,6 @@ const LinetAbout = {
     // ユーティリティ関数
     // ========================================
 
-    // クリック効果
     addClickEffect(element) {
         element.style.transform = 'scale(0.95)';
         setTimeout(() => {
@@ -565,7 +548,6 @@ const LinetAbout = {
         }, 150);
     },
 
-    // スロットリング
     throttle(func, limit) {
         let inThrottle;
         return function(...args) {
@@ -577,7 +559,6 @@ const LinetAbout = {
         };
     },
 
-    // デバウンス
     debounce(func, wait) {
         let timeout;
         return function(...args) {
@@ -590,7 +571,6 @@ const LinetAbout = {
         };
     },
 
-    // 要素の位置取得
     getElementOffset(element) {
         const rect = element.getBoundingClientRect();
         return {
@@ -603,14 +583,8 @@ const LinetAbout = {
     // パフォーマンス最適化
     // ========================================
     initPerformanceOptimizations() {
-        // Intersection Observer の設定
         this.setupLazyLoading();
-
-        // Prefetch リンクの設定
         this.setupPrefetch();
-
-        // Service Worker の登録（必要に応じて）
-        // this.registerServiceWorker();
     },
 
     setupLazyLoading() {
@@ -639,12 +613,10 @@ const LinetAbout = {
     },
 
     setupPrefetch() {
-        // 重要なリソースの事前読み込み
         const importantLinks = document.querySelectorAll('a[href^="#"]');
 
         importantLinks.forEach(link => {
             link.addEventListener('mouseenter', () => {
-                // リンク先の画像やリソースを事前読み込み
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
 
@@ -669,49 +641,59 @@ const LinetAbout = {
     handlePageLoad() {
         document.body.classList.add('loaded');
 
-        // ページ読み込み後の追加初期化
-        this.initLazyLoading();
+        // setupLazyLoading を呼び出す（存在する関数名へ変更）
+        if (typeof this.setupLazyLoading === 'function') {
+            this.setupLazyLoading();
+        }
 
         console.log('✅ LinetAbout page loaded completely');
     },
 
     handleResize() {
-        // リサイズ時の処理
         if (this.state.isMenuOpen && window.innerWidth > 768) {
             this.closeMobileMenu();
         }
     },
 
-    handleError(error) {
-        console.error('LinetAbout JavaScript Error:', error.error);
+    handleError(errorEvent) {
+        // errorEvent は window.onerror の形式や ErrorEvent で来るため柔軟に扱う
+        try {
+            console.error('LinetAbout JavaScript Error:', errorEvent);
 
-        // 本番環境では、エラーレポートをサーバーに送信
-        if (window.location.hostname !== 'localhost') {
-            this.reportError(error);
+            if (window.location.hostname !== 'localhost') {
+                this.reportError(errorEvent);
+            }
+        } catch (e) {
+            console.error('Error in handleError:', e);
         }
     },
 
     reportError(error) {
-        // エラーレポート機能（実装は環境に応じて）
         try {
+            const payload = {
+                message: error.message || (error.error && error.error.message) || 'Unknown error',
+                filename: error.filename || null,
+                lineno: error.lineno || null,
+                colno: error.colno || null,
+                stack: error.error && error.error.stack ? error.error.stack : null,
+                userAgent: navigator.userAgent,
+                url: window.location.href,
+                timestamp: new Date().toISOString()
+            };
+
+            // /api/error-report が環境にない場合はここで失敗するため try/catch
             fetch('/api/error-report', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    message: error.message,
-                    filename: error.filename,
-                    lineno: error.lineno,
-                    colno: error.colno,
-                    stack: error.error?.stack,
-                    userAgent: navigator.userAgent,
-                    url: window.location.href,
-                    timestamp: new Date().toISOString()
-                })
+                body: JSON.stringify(payload)
+            }).catch(err => {
+                // 404 等はログに残すだけにする
+                console.warn('Error report failed (non-fatal):', err);
             });
         } catch (reportError) {
-            console.error('Failed to report error:', reportError);
+            console.warn('Failed to prepare error report:', reportError);
         }
     },
 
@@ -719,29 +701,32 @@ const LinetAbout = {
     // クリーンアップ
     // ========================================
     destroy() {
-        // イベントリスナーの削除
-        window.removeEventListener('scroll', this.handleNavScroll);
+        try {
+            if (this.handleNavScroll) {
+                window.removeEventListener('scroll', this.handleNavScroll);
+            }
 
-        // Intersection Observer の削除
-        this.state.observers.forEach(observer => {
-            observer.disconnect();
-        });
-        this.state.observers.clear();
+            // Intersection Observer の削除
+            this.state.observers.forEach(observer => {
+                try { observer.disconnect(); } catch (e) { /* noop */ }
+            });
+            this.state.observers.clear();
 
-        // モバイルメニューを閉じる
-        this.closeMobileMenu();
+            // モバイルメニューを閉じる
+            this.closeMobileMenu();
 
-        console.log('🧹 LinetAbout destroyed and cleaned up');
+            console.log('🧹 LinetAbout destroyed and cleaned up');
+        } catch (e) {
+            console.error('Error during destroy:', e);
+        }
     }
 };
 
-// ========================================
-// 即座実行（IIFE）でグローバル汚染を防ぐ
-// ========================================
+// 即座実行（IIFE）
 (() => {
     'use strict';
 
-    // LinetAbout の初期化
+    // LinetAbout のイベントを先にバインドしておく（DOMContentLoaded 内で init を呼ぶ流れ）
     LinetAbout.bindEvents();
 
     // グローバルアクセス用（デバッグ時など）
@@ -750,9 +735,7 @@ const LinetAbout = {
     }
 })();
 
-// ========================================
 // エクスポート（モジュール使用時）
-// ========================================
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = LinetAbout;
 }
