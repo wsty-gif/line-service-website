@@ -1297,3 +1297,97 @@ body {
     opacity: 1;
     transform: translateX(3px); /* ホバー時に右にスライド */
 }
+
+/* ステップナビ全体 */
+.step-navigation {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 12px 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* リストの基本 */
+.step-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-menu li {
+  margin: 8px 0;
+}
+
+/* リンク部分 */
+.step-link {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.step-link:hover {
+  background: #f7f7f7;
+  border-left: 3px solid #06c755; /* LINEカラー */
+  color: #06c755;
+}
+
+/* アクティブ時 */
+.step-link.active {
+  font-weight: bold;
+  color: #06c755;
+  border-left: 3px solid #06c755;
+  background: #f0fdf4;
+}
+
+/* Hero 全体 */
+.hero {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+/* Hero 内のコンテンツを横並びに */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右に分ける */
+  gap: 40px; /* テキストと画像の間隔 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 左側テキスト */
+.hero-text {
+  flex: 1; /* 余白に合わせて伸縮 */
+}
+
+/* 右側画像 */
+.hero-image {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* レスポンシブ（スマホ時は縦積み） */
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    margin-top: 20px;
+  }
+}
