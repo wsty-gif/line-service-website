@@ -18,7 +18,158 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ヘッダーの背景変更
     initHeaderScroll();
+
+    initNavigation();
+    initScrollAnimations();
+    initSmoothScroll();
 });
+
+// ========================================
+// ナビゲーション関連機能
+// ========================================
+function initNavigation() {
+    const nav = document.getElementById('navigation');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // スクロール時のナビゲーション背景変更
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+        } else {
+            nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+    });
+
+    // アクティブなナビゲーションリンクの更新
+    updateActiveNavLink();
+    window.addEventListener('scroll', updateActiveNavLink);
+}
+
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const scrollPos = window.scrollY + 100;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            // 既存のアクティブクラスを削除
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // 対応するナビリンクにアクティブクラスを追加
+            const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+    });
+}
+
+// ========================================
+// スムーススクロール機能
+// ========================================
+function initSmoothScroll() {
+    const scrollLinks = document.querySelectorAll('a[href^="#"]');
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const nav = document.getElementById('navigation');
+                const navHeight = nav ? nav.offsetHeight : 0;
+                
+                // 少し余裕を持たせてスクロール
+                const offset = navHeight + 20;
+                const targetPosition = targetElement.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // スクロールナビゲーションボタンにクリック効果を追加
+                if (this.classList.contains('point_item')) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+
+                // モバイルメニューが開いている場合は閉じる
+                closeMobileMenu();
+            }
+        });
+    });
+}
+
+// ========================================
+// スクロールアニメーション
+// ========================================
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象の要素を監視
+    const animateElements = document.querySelectorAll('.point-section, .problem-item');
+    animateElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // 数値カウントアニメーション（必要に応じて追加）
+    initCountAnimation();
+}
+
+function initCountAnimation() {
+    const countElements = document.querySelectorAll('[data-count]');
+    
+    const countObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                countObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    countElements.forEach(element => {
+        countObserver.observe(element);
+    });
+}
+
+function animateCount(element) {
+    const targetCount = parseInt(element.getAttribute('data-count'));
+    let currentCount = 0;
+    const increment = targetCount / 100;
+    
+    const timer = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+            element.textContent = targetCount.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(currentCount).toLocaleString();
+        }
+    }, 20);
+}
 
 // チャット機能の初期化
 function initChatWidget() {

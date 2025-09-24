@@ -17,101 +17,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">L</div>
-                LINE Pro Solutions
-            </a>
-            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">ホーム</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/linet_about/linet_about.html" class="nav-link">Linetについて</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">LINEについて <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="about/line-statistics.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>LINEの利用統計・データ</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="about/why-line-business.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>ビジネスに最適な理由</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="about/line-success-cases.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>成功事例・効果</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="about/competitor-comparison.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>他ツールとの比較</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                    </div>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">サービス <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="services/customer-acquisition.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>集客用LINE</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="services/back-office.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>バックオフィス用LINE</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="services/integrated.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>統合プラン</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                        <a href="services/training.html" class="dropdown-item">
-                            <div class="dropdown-item-content">
-                                <span>研修サービス</span>
-                            </div>
-                            <i class="fas fa-chevron-right dropdown-arrow"></i>
-                        </a>
-                    </div>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="line-features.html" class="nav-link">機能</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">お問い合わせ</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="contact.html" class="btn btn-primary">無料相談</a>
-                </li>
-            </ul>
-            
-            <div class="mobile-menu-btn">
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
+    <!-- ナビゲーション -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-line"></i>
+                <span>LINE運用サポート</span>
             </div>
-        </nav>
-    </header>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link">ホーム</a></li>
+                <li><a href="#problems" class="nav-link">お悩み</a></li>
+                <li><a href="#point1" class="nav-link">集客強化</a></li>
+                <li><a href="#point2" class="nav-link">業務効率化</a></li>
+                <li><a href="#point3" class="nav-link">運用サポート</a></li>
+                <li><a href="#point4" class="nav-link">選ばれる理由</a></li>
+                <li><a href="#point5" class="nav-link">導入の流れ</a></li>
+                <li><a href="#point6" class="nav-link">サポート体制</a></li>
+                <li><a href="#contact" class="nav-link cta-button">今すぐ相談</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- ファーストビュー -->
     <section id="hero" class="hero">
@@ -156,26 +86,81 @@
                 <div class="problem-items">
                     <div class="problem-item">
                         <div class="problem-icon">💭</div>
-                        <p>「もっとお客さんをリピートさせたい…」</p>
+                        <p>「お客さん、一回来てくれたきり...どうやったらもう一度来てもらえるかな？」</p>
                     </div>
                     <div class="problem-item">
                         <div class="problem-icon">😰</div>
-                        <p>「新人スタッフに毎回同じ説明をするのが大変…」</p>
+                        <p>「また新人さんに基本から教えないと...この繰り返し、正直しんどいです」</p>
                     </div>
                     <div class="problem-item">
                         <div class="problem-icon">😵</div>
-                        <p>「せっかくツールを導入しても使いこなせない…」</p>
+                        <p>「便利そうなツール導入したけど、使い方が分からなくて結局放置...」</p>
                     </div>
                 </div>
                 
                 <div class="solution-text">
-                    <p class="solution-lead">そんな悩みを解決するのが、</p>
+                    <p class="solution-lead">実は、そんなお悩み...私たちがまるっと解決できるんです！</p>
                     <h2 class="solution-title">
-                        <span class="highlight-green">LINE公式アカウント作成・運用代行</span>
+                        <span class="highlight-green">LINE公式アカウントの運用代行</span>
                         <span class="cross">×</span>
                         <span class="highlight-blue">業務マニュアル導入サポート</span>
-                        です。
+                        で、お店の「困った」が「できた！」に変わります。
                     </h2>
+                    
+                    <!-- スクロールナビゲーション -->
+                    <div class="point_list_wrap">
+                        <p class="nav-intro">実際にどんなことができるのか、気になる項目をクリックしてみてください↓</p>
+                        <ul class="point_list">
+                            <li>
+                                <a href="#point1" class="point_item">
+                                    <div class="point_item_no">01.</div>
+                                    <div class="point_item_title">
+                                        リピート客を増やす<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#point2" class="point_item">
+                                    <div class="point_item_no">02.</div>
+                                    <div class="point_item_title">
+                                        新人教育をサクッと効率化<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#point3" class="point_item">
+                                    <div class="point_item_no">03.</div>
+                                    <div class="point_item_title">
+                                        運用を丸ごとお任せOK<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#point4" class="point_item">
+                                    <div class="point_item_no">04.</div>
+                                    <div class="point_item_title">
+                                        他にはないワンストップサービス<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#point5" class="point_item">
+                                    <div class="point_item_no">05.</div>
+                                    <div class="point_item_title">
+                                        たった3ステップで導入完了<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#point6" class="point_item">
+                                    <div class="point_item_no">06.</div>
+                                    <div class="point_item_title">
+                                        困った時も安心サポート<i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,25 +171,27 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 1</span>
-                <h2 class="point-title">集客を強化する</h2>
-                <p class="point-subtitle">"また来たい"を生み出すLINE活用</p>
+                <h2 class="point-title">リピート客を増やす</h2>
+                <p class="point-subtitle">「また行きたい！」って思ってもらえるLINE活用術</p>
             </div>
             <div class="point-content">
                 <div class="point-text">
+                    <p class="point-intro">正直な話、一見さんだけじゃお店は続けられませんよね。だからこそ、一度来てくれたお客さんには絶対にまた来てもらいたい。</p>
                     <ul class="point-list">
                         <li>
                             <i class="fas fa-user-plus"></i>
-                            <span>友だち追加の導線づくり</span>
+                            <span>お客さんがパッと友だち追加したくなる「仕掛け」作り</span>
                         </li>
                         <li>
                             <i class="fas fa-ticket-alt"></i>
-                            <span>クーポン・メッセージ配信でリピート率アップ</span>
+                            <span>思わず「今度使おう」ってなるクーポン配信のコツ</span>
                         </li>
                         <li>
                             <i class="fas fa-store"></i>
-                            <span>小規模店舗でも始めやすい設計</span>
+                            <span>小さなお店でも無理なく続けられる、シンプルな仕組み</span>
                         </li>
                     </ul>
+                    <p class="point-note">実際、導入した店舗さんの8割以上でリピート率が向上してるんです。</p>
                 </div>
                 <div class="point-image">
                     <img src="images/line-usage.jpg" alt="スマートフォンでLINEを利用する顧客" class="point-img">
@@ -218,28 +205,30 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 2</span>
-                <h2 class="point-title">業務を効率化する</h2>
-                <p class="point-subtitle">「誰でもすぐに戦力化できる仕組み」</p>
+                <h2 class="point-title">新人教育をサクッと効率化</h2>
+                <p class="point-subtitle">「えっ、もうできるの？」って驚くような戦力化スピード</p>
             </div>
             <div class="point-content reverse">
                 <div class="point-image">
                     <img src="images/staff-training.jpg" alt="マニュアルを使用したスタッフ教育の様子" class="point-img">
                 </div>
                 <div class="point-text">
+                    <p class="point-intro">新しいスタッフが入るたび、同じことを一から説明するのって本当に大変ですよね。でも、ちゃんとしたマニュアルがあれば...</p>
                     <ul class="point-list">
                         <li>
                             <i class="fas fa-book"></i>
-                            <span>手順をマニュアル化して属人化を解消</span>
+                            <span>誰がやっても同じ品質になる、分かりやすいマニュアル作成</span>
                         </li>
                         <li>
                             <i class="fas fa-graduation-cap"></i>
-                            <span>新人教育がスムーズに</span>
+                            <span>「あれ、どうするんだっけ？」がなくなる丁寧な手順書</span>
                         </li>
                         <li>
                             <i class="fas fa-shield-alt"></i>
-                            <span>忙しい時でも安心して任せられる体制</span>
+                            <span>忙しい時間帯も「お願いします！」で安心して任せられる</span>
                         </li>
                     </ul>
+                    <p class="point-note">ベテランスタッフの技術を「見える化」するから、新人さんも迷わず成長できます。</p>
                 </div>
             </div>
         </div>
@@ -250,25 +239,27 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 3</span>
-                <h2 class="point-title">運用を伴走サポート</h2>
-                <p class="point-subtitle">導入して終わりではありません</p>
+                <h2 class="point-title">運用を丸ごとお任せOK</h2>
+                <p class="point-subtitle">「作って終わり」じゃない、本当に頼れるパートナー</p>
             </div>
             <div class="point-content">
                 <div class="point-text">
+                    <p class="point-intro">せっかくLINEやマニュアルを作っても、うまく活用できなければ意味がないですよね。だからこそ、私たちは最後まで責任を持ってサポートします。</p>
                     <ul class="point-list">
                         <li>
                             <i class="fas fa-paper-plane"></i>
-                            <span>定期配信や運用代行も対応</span>
+                            <span>「今日は何を配信しよう...」って悩む必要なし！定期配信も代行します</span>
                         </li>
                         <li>
                             <i class="fas fa-chart-line"></i>
-                            <span>効果測定＆改善提案で継続的に成果を最大化</span>
+                            <span>数字を見ながら「もっと良くするには？」を一緒に考える</span>
                         </li>
                         <li>
                             <i class="fas fa-handshake"></i>
-                            <span>専任担当が店舗に寄り添う安心感</span>
+                            <span>何か困ったら、いつでも相談できる専任スタッフがつきます</span>
                         </li>
                     </ul>
+                    <p class="point-note">お客さまからよく「これなら安心して任せられる」って言っていただけるんです。</p>
                 </div>
                 <div class="point-image">
                     <img src="images/support-team.jpg" alt="サポートチームが店舗をサポートする様子" class="point-img">
@@ -282,28 +273,30 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 4</span>
-                <h2 class="point-title">選ばれる理由</h2>
-                <p class="point-subtitle">「LINEと業務マニュアルをワンストップでサポート」</p>
+                <h2 class="point-title">他にはないワンストップサービス</h2>
+                <p class="point-subtitle">「あちこち依頼する手間が省けて、本当に楽！」</p>
             </div>
             <div class="point-content reverse">
                 <div class="point-image">
                     <img src="images/one-stop-service.jpg" alt="ワンストップでサービスを提供する様子" class="point-img">
                 </div>
                 <div class="point-text">
+                    <p class="point-intro">よくあるのが「LINEは A社、マニュアルは B社」みたいなパターン。でも、別々だと連携がうまくいかないことが多いんです。</p>
                     <ul class="point-list">
                         <li>
                             <i class="fas fa-sync-alt"></i>
-                            <span>集客と効率化を両立できる唯一の仕組み</span>
+                            <span>集客も効率化も一気に解決！窓口ひとつで全部お任せ</span>
                         </li>
                         <li>
                             <i class="fas fa-bullseye"></i>
-                            <span>中小規模店舗に特化した実務的ノウハウ</span>
+                            <span>大手じゃなく中小店舗だからこそ分かる「リアルな課題」を解決</span>
                         </li>
                         <li>
                             <i class="fas fa-tools"></i>
-                            <span>実際に"使える"形で提供</span>
+                            <span>「きれいだけど使えない」じゃなく、実際の現場で活用できるものを</span>
                         </li>
                     </ul>
+                    <p class="point-note">実は、この組み合わせでサポートしてる会社って意外と少ないんです。だから選んでいただけてるのかも。</p>
                 </div>
             </div>
         </div>
@@ -314,15 +307,15 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 5</span>
-                <h2 class="point-title">導入の流れ</h2>
-                <p class="point-subtitle">最短3ステップでスタート</p>
+                <h2 class="point-title">たった3ステップで導入完了</h2>
+                <p class="point-subtitle">「思ってたより簡単だった！」が感想No.1</p>
             </div>
             <div class="flow-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>無料相談</h3>
-                        <p>LINEまたはフォームから</p>
+                        <h3>まずは気軽にご相談</h3>
+                        <p>LINEでも、フォームでもOK。「ちょっと話だけ聞いてみたい」で大丈夫です</p>
                         <i class="fas fa-comments step-icon"></i>
                     </div>
                 </div>
@@ -332,8 +325,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>ヒアリング＆ご提案</h3>
-                        <p>お店に最適な方法をご提案</p>
+                        <h3>お店の状況をお聞かせください</h3>
+                        <p>「今こんなことで困ってて...」を教えてください。一緒に最適な解決策を考えましょう</p>
                         <i class="fas fa-lightbulb step-icon"></i>
                     </div>
                 </div>
@@ -343,8 +336,8 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>サービス導入＆運用開始</h3>
-                        <p>すぐに効果を実感</p>
+                        <h3>実際に導入＆効果実感</h3>
+                        <p>「あ、本当に楽になった！」を実感していただけるはずです</p>
                         <i class="fas fa-rocket step-icon"></i>
                     </div>
                 </div>
@@ -363,21 +356,23 @@
         <div class="container">
             <div class="point-header">
                 <span class="point-number">Point 6</span>
-                <h2 class="point-title">安心のサポート体制</h2>
-                <p class="point-subtitle">導入から日々の運用まで伴走</p>
+                <h2 class="point-title">困った時も安心サポート</h2>
+                <p class="point-subtitle">「一人じゃない」って思える、頼れるサポート体制</p>
             </div>
             <div class="point-content">
                 <div class="point-text">
+                    <p class="point-intro">導入した後も、ずっと一緒に歩んでいきます。「こんなこと聞いても大丈夫かな...」って遠慮する必要は全くありません。</p>
                     <ul class="point-list">
                         <li>
                             <i class="fas fa-cogs"></i>
-                            <span>店舗ごとにカスタマイズ可能</span>
+                            <span>お店の規模や業種に合わせて、オーダーメイドでカスタマイズ</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>困った時にすぐ相談できる環境をご用意</span>
+                            <span>「ちょっと分からないことが...」そんな時こそ、遠慮なく連絡してください</span>
                         </li>
                     </ul>
+                    <p class="point-note">お客さまには「困った時にすぐ相談できるから安心」って言っていただけてます。</p>
                 </div>
                 <div class="point-image">
                     <img src="images/customer-support.jpg" alt="カスタマーサポートの様子" class="point-img">
@@ -391,11 +386,11 @@
         <div class="container">
             <div class="closing-content">
                 <h2 class="closing-title">
-                    集客も業務改善も、<span class="highlight">"仕組み化"</span>すれば成果は続きます。
+                    結局のところ、<span class="highlight">「仕組み」</span>があるかどうかで、お店の未来は大きく変わります。
                 </h2>
                 <p class="closing-subtitle">
-                    LINE公式アカウントと業務マニュアル導入で、<br>
-                    あなたのお店をもっとスマートにしませんか？
+                    「毎日バタバタ」から「余裕を持って運営」へ。<br>
+                    一歩踏み出してみませんか？
                 </p>
                 <div class="contact-buttons">
                     <a href="https://lin.ee/example" class="btn btn-line" target="_blank">
