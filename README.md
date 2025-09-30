@@ -244,4 +244,4 @@ LINE公式アカウントを活用した集客・社内業務効率化・マニ�
 
 ---
 
-**© Copyright © since 2025 LiNet All Rights Reserved.d.**
+**© Copyright © since 2025 LiNet All Rights Reserved.**
