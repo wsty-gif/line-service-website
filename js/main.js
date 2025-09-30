@@ -1,4 +1,4 @@
-// LINE Pro Solutions - メイン JavaScript
+// LiNet - メイン JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // チャット機能
