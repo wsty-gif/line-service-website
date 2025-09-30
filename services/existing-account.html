@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LINE公式アカウントを活用して集客力アップ・コスト削減・業務効率化を実現。アカウント作成から運用代行までトータルでサポートします。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <title>既存アカウントをお持ちの方 - LINE公式アカウント運用サポート</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', 'メイリオ', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #00C300;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #dcedfd 0%, #dcedfd 100%);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .plan-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+
+        .plan-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .price-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .price-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #009b5a;
+            font-weight: bold;
+        }
+
+        .problems-section {
+            background: #f8f9fa;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #e74c3c;
+        }
+
+        .comparison-section {
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #00C300;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .our-service {
+            background: #e8f5e8;
+            font-weight: bold;
+            color: #00C300;
+        }
+
+        .other-service {
+            background: #ffebee;
+            color: #666;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #00C300;
+        }
+
+        .benefit-number {
+            background: #00C300;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .results-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            margin-bottom: 10px;
+        }
+
+        .result-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background: #00C300;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #00C300;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .highlight {
+            background: linear-gradient(transparent 60%, #ffeb3b 60%);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .price-info {
+                flex-direction: column;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav-container">            
+            <ul class="nav-menu">
+                <li class="nav-item logo-item">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/xlogo.png" alt="LINE Pro Solutions Logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..//linet_about.html" class="nav-link">Linetについて</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">LINEについて <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../about/line-statistics.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>LINEの利用統計・データ</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="../about/why-line-business.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>ビジネスに最適な理由</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="../about/line-success-cases.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>成功事例・実績</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="../about/competitor-comparison.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>競合ツールとの比較</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">サービス <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="customer-acquisition.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>集客用LINE</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="back-office.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>バックオフィス用LINE</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="integrated.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>統合プラン</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                        <a href="existing-account.html" class="dropdown-item">
+                            <div class="dropdown-item-content">
+                                <span>既存アカウントをお持ちの方</span>
+                            </div>
+                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                        </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../line-features.html" class="nav-link">機能</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">お問い合わせ</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contact.html" class="btn btn-primary">無料相談</a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu-btn">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- ヒーローセクション -->
+        <section class="hero" style="background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);">
+            <div class="container">
+                <h1 class="hero-title">そのLINE運用、<br>本当に最大限活かせていますか？</h1>
+                <p class="hero-subtitle" style="color: white; opacity: 0.9;">
+                    同じアカウントでも運用次第で成果は大きく変わります
+                </p>
+                <!-- <p class="hero-description" style="color: #333333;">
+                    <strong>既存LINE公式アカウント運用中の企業様へ</strong><br>
+                    現在運用中のアカウントに、専門的な運用サポートを追加しませんか？
+                </p> -->
+                <div style="margin-top: 40px;">
+                    <a href="../contact.html" class="btn btn-secondary btn-large" style="margin-right: 20px;">
+                        <i class="fas fa-phone"></i> 無料相談を始める
+                    </a>
+                    <a href="#problems" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
+                        詳しく見る
+                    </a>
+                </div>
+            </div>
+        </section>
+    <!-- ヒーローセクション -->
+        <section class="hero-section">
+            <div class="container">
+                <!-- <h1 class="hero-title">そのLINE運用、<br>本当に最大限活かせていますか？</h1>
+                <p class="hero-subtitle">同じアカウントでも運用次第で成果は大きく変わります</p>
+                 -->
+                <div class="plan-box">
+                    <h2 class="plan-title">既存LINE公式アカウント運用中の企業様へ</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;">現在運用中のアカウントに、専門的な運用サポートを追加しませんか？</p>
+                    
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #ff085a;">リッチメニュー機能強化＋運用サポートプラン</h3>
+                    
+                    <div class="price-info">
+                        <div class="price-item">
+                            <div class="price-label">初期費用</div>
+                            <div class="price-value">5,000円</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-label">月額</div>
+                            <div class="price-value">20,000円</div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-bottom: 15px; font-size: 1.2rem;">サービス内容</h4>
+                    <ul class="service-list">
+                        <li>既存アカウントのリッチメニュー制作・デザイン刷新</li>
+                        <li>タブ分け機能、ユーザー別メニュー表示などの高度な機能追加</li>
+                        <li>毎月30ポイント分の運用代行（配信作業、メニュー更新等）</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; font-size: 1rem; opacity: 0.9;">
+                        現在の運用状況やお悩みに合わせて、最適なサポート内容をカスタマイズいたします。<br>
+                        まずは無料診断から、お気軽にご相談ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくあるお悩みセクション -->
+        <section class="section problems-section">
+            <div class="container">
+                <h2 class="section-title">よくあるお悩み</h2>
+                <p class="section-subtitle">こんな課題を抱えていませんか？</p>
+                
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">👥</div>
+                        <h3 class="problem-title">友だちが増えても<br>リピーターに繋がらない</h3>
+                        <p>フォロワーは増えているのに、実際のリピート来店には結びついていない...</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">📱</div>
+                        <h3 class="problem-title">配信しても<br>既読や反応が伸びない</h3>
+                        <p>一生懸命配信しているのに、開封率や反応率が低くて効果を感じられない...</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">💰</div>
+                        <h3 class="problem-title">外注しているけど<br>料金が高い割に成果が見えない</h3>
+                        <p>運用を外注しているが、コストに見合った成果が出ているか疑問...</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">⏰</div>
+                        <h3 class="problem-title">スタッフが手作業で運用していて<br>時間がかかる</h3>
+                        <p>手動での配信や管理作業に多くの時間を取られてしまっている...</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">📊</div>
+                        <h3 class="problem-title">「とりあえず開設したけど」<br>その後効果測定していない</h3>
+                        <p>アカウントは作ったものの、実際の効果や改善点が分からない...</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">🎨</div>
+                        <h3 class="problem-title">他店と比べて見劣りする<br>デザインやメニューになっている</h3>
+                        <p>競合他社と比較すると、デザインや機能面で劣っているように感じる...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 比較表セクション -->
+        <section class="section comparison-section">
+            <div class="container">
+                <h2 class="section-title">弊社に乗り換えるメリット</h2>
+                <p class="section-subtitle">他社サービスとの違いを比較してみてください</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th>他社サービス</th>
+                            <th>弊社サービス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>月額料金</strong></td>
+                            <td class="other-service">50,000円〜100,000円</td>
+                            <td class="our-service">20,000円</td>
+                        </tr>
+                        <tr>
+                            <td><strong>サポート内容</strong></td>
+                            <td class="other-service">基本的な運用代行のみ</td>
+                            <td class="our-service">戦略立案〜運用まで包括サポート</td>
+                        </tr>
+                        <tr>
+                            <td><strong>デザイン対応</strong></td>
+                            <td class="other-service">テンプレートから選択</td>
+                            <td class="our-service">完全オーダーメイド制作</td>
+                        </tr>
+                        <tr>
+                            <td><strong>効果測定</strong></td>
+                            <td class="other-service">月1回の簡単なレポート</td>
+                            <td class="our-service">詳細な分析レポート＋改善提案</td>
+                        </tr>
+                        <tr>
+                            <td><strong>カスタマイズ</strong></td>
+                            <td class="other-service">限定的</td>
+                            <td class="our-service">ポイント制で柔軟に対応</td>
+                        </tr>
+                        <tr>
+                            <td><strong>サポート体制</strong></td>
+                            <td class="other-service">メール対応中心</td>
+                            <td class="our-service">専任担当による直接サポート</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- メリットセクション -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">弊社に乗り換える5つのメリット</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-number">①</div>
+                        <h3 class="benefit-title">集客効果アップ</h3>
+                        <ul style="text-align: left; list-style: disc; padding-left: 20px;">
+                            <li>リッチメニューや配信設計を最適化し、反応率・来店率が向上</li>
+                            <li>顧客属性に合わせた配信で、リピーター獲得がスムーズに</li>
+                            <li>InstagramやGoogle口コミとの連動で、新規顧客の流入を強化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-number">②</div>
+                        <h3 class="benefit-title">コスト削減</h3>
+                        <ul style="text-align: left; list-style: disc; padding-left: 20px;">
+                            <li>他社運用代行よりもリーズナブルな料金設定</li>
+                            <li>不要な機能や無駄な配信を削減し、固定費を圧縮</li>
+                            <li>自動化導入でスタッフ工数を減らし、人件費も節約</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-number">③</div>
+                        <h3 class="benefit-title">業務効率化</h3>
+                        <ul style="text-align: left; list-style: disc; padding-left: 20px;">
+                            <li>予約管理・シフト提出・勤怠管理などをLINE上で一元化</li>
+                            <li>配信やクーポン発行を自動化し、手間を最小限に</li>
+                            <li>運用マニュアルやサポート体制で、担当者が変わっても安心</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-number">④</div>
+                        <h3 class="benefit-title">安心のサポート</h3>
+                        <ul style="text-align: left; list-style: disc; padding-left: 20px;">
+                            <li>専任担当が戦略から運用までフルサポート</li>
+                            <li>定期的なレポートで成果が見える化</li>
+                            <li>「どうすればいいか分からない」をすぐ相談できる体制</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-number">⑤</div>
+                        <h3 class="benefit-title">成果事例を活用できる</h3>
+                        <ul style="text-align: left; list-style: disc; padding-left: 20px;">
+                            <li>他店で実績のある配信設計・クーポン施策を自店舗にすぐ反映</li>
+                            <li>成果の出るノウハウを最短で活用可能</li>
+                            <li>業界特化の知見を活かした効果的な施策提案</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 実績セクション -->
+    <section class="section results-section">
+        <div class="container">
+            <h2 class="section-title">事例・実績紹介</h2>
+            <p class="section-subtitle" style="color: #030300;">実際の改善数値をご紹介します</p>
+            
+            <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 30px; color: #ffeb3b;">集客・売上アップ</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">30→80件</div>
+                    <p class="result-description">LINE経由の予約が<br>月30件から月80件に増加</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">5%→15%</div>
+                    <p class="result-description">配信からの来店率が<br>3倍に改善</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">1.5倍</div>
+                    <p class="result-description">友だち追加数が<br>1ヶ月で1.5倍に</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">+20%</div>
+                    <p class="result-description">クーポン利用率が<br>20%アップ</p>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; font-size: 1.8rem; margin: 50px 0 30px; color: #ffeb3b;">コスト削減</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">10万→6万</div>
+                    <p class="result-description">運用代行費を<br>月10万円から6万円に削減</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">20-30%</div>
+                    <p class="result-description">無駄な配信を減らし<br>固定費をカット</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">同等効果</div>
+                    <p class="result-description">広告費を抑えつつ<br>同じ来店数を確保</p>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; font-size: 1.8rem; margin: 50px 0 30px; color: #ffeb3b;">業務効率化</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">2時間→30分</div>
+                    <p class="result-description">予約対応にかかる時間を<br>大幅短縮</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">80%削減</div>
+                    <p class="result-description">手作業での顧客管理<br>入力作業を削減</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">対応漏れ0</div>
+                    <p class="result-description">スタッフ間の情報共有が<br>スムーズに</p>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; font-size: 1.8rem; margin: 50px 0 30px; color: #ffeb3b;">顧客満足度アップ</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">72%→90%</div>
+                    <p class="result-description">アンケートでの<br>顧客満足度が改善</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">5件→20件</div>
+                    <p class="result-description">クチコミ投稿件数が<br>月5件から20件に</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">+20%</div>
+                    <p class="result-description">リピーター率が<br>20%アップ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">まずは無料診断から始めませんか？</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">
+                現在のアカウントの<span class="highlight">改善ポイントを無料でお伝え</span>します
+            </p>
+            <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9;">
+                専門スタッフがあなたのLINEアカウントを詳しく分析し、<br>
+                売上アップのための具体的な改善提案をいたします。<br>
+                診断は完全無料、強引な営業は一切いたしません。
+            </p>
+            
+            <a href="#contact" class="cta-button">無料診断を申し込む</a>
+            <a href="#contact" class="cta-button">お気軽にご相談ください</a>
+            
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                ※診断結果のみの提供も可能です。お気軽にお問い合わせください。
+            </p>
+        </div>
+    </section>
+
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>サービス</h3>
+                    <ul>
+                        <li><a href="customer-acquisition.html">集客用LINE</a></li>
+                        <li><a href="back-office.html">バックオフィス用LINE</a></li>
+                        <li><a href="integrated.html">統合プラン</a></li>
+                        <li><a href="training.html">研修サービス</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>機能・情報</h3>
+                    <ul>
+                        <li><a href="../line-features.html">LINE機能一覧</a></li>
+                        <li><a href="../contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <p style="color: #CCCCCC; margin-bottom: 15px;">
+                        LINE公式アカウントを活用した<br>
+                        集客・業務効率化の専門企業
+                    </p>
+                    <p style="color: #CCCCCC;">
+                        <i class="fas fa-envelope"></i> tetote.hashimoto@gmail.com<br>
+                        <i class="fas fa-envelope"></i> tetote.d.fukai@gmail.com
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>お問い合わせ</h3>
+                    <p style="color: #CCCCCC; margin-bottom: 20px;">
+                        お気軽にご相談ください
+                    </p>
+                    <a href="../contact.html" class="btn btn-primary">
+                        無料相談を申し込む
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; Copyright © since 2025 LiNet All Rights Reserved.d.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- チャット機能 -->
+    <div class="chat-widget">
+        <div class="chat-modal" id="chatModal">
+            <div class="chat-header">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>業務効率化についてご相談</span>
+                    <button id="closeChat" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    バックオフィス用LINE公式アカウントにご興味をお持ちいただき、ありがとうございます！どちらがお知りになりたいですか？
+                </div>
+                <div class="chat-buttons">
+                    <a href="../contact.html" class="chat-btn">
+                        <i class="fas fa-phone"></i> 無料相談を申し込む
+                    </a>
+                    <a href="#pricing" class="chat-btn">
+                        <i class="fas fa-yen-sign"></i> 料金プランを詳しく
+                    </a>
+                    <a href="customer-acquisition.html" class="chat-btn">
+                        <i class="fas fa-users"></i> 集客も気になる
+                    </a>
+                    <a href="integrated.html" class="chat-btn">
+                        <i class="fas fa-rocket"></i> 統合プランを見る
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+</body>
+</html>
